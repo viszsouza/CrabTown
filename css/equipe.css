@@ -1,1 +1,83 @@
 @import url("base.css");
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 45px;
+    padding: 90px 0;
+}
+
+/* Título da página */
+.equipe-h1{
+    font-size: 48px;
+    font-family: "Chau Philomene One", sans-serif;
+}
+
+/* Section - Cards */
+.integrantes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 45px 40px;
+}
+
+/* Card */
+.card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding:  20px 65px;
+    background-color: #000000;
+}
+
+/* Imagem do card */
+.card-img{
+    width: 160px;
+    height: 160px;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+/* Nome do card */
+.card-nome{
+    margin-bottom: 10px;
+    /* Precisa da font-family */
+    font-size: 15px;
+    color: #fff;
+}
+
+/* Cargo do card */
+.card-cargo{
+    margin-bottom: 45px;
+    /* Precisa da font-family */
+    font-size: 12px;
+    font-weight: normal;
+    color: #c4c4c4;
+}
+
+/* Ícones do card */
+.card-icones{
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+}
+
+/* Github e Linkedin */
+.github, .linkedin{
+    cursor: pointer;
+    font-size: 40px;
+    color: #fff;
+    transition: .3s;
+}
+
+.github:hover{
+    color: #777575;
+}
+
+.linkedin:hover{
+    color: #3A7ED4;
+}
