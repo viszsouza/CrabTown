@@ -1,1 +1,117 @@
 @import url("base.css");
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-family: "Chau Philomene One", sans-serif;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.itens h2{
+    font-family: "Chau Philomene One", sans-serif;
+}
+
+.itens{
+    text-align: left;
+}
+
+.itens p{
+    font-family: "Caladea", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.itens p, button{
+    margin-top: 20px;
+}
+
+.left .itens{
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.right .itens{
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+.itens button{
+    outline: 0;
+    border-radius: 15px;
+    width: 130px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.texts{
+    max-width: 700px;
+    line-clamp: 3;
+
+}
+
+.btnAzul{
+    border: 0;
+    background-color: #023E8A;
+    color: white;
+}
+
+.btnAmarelo{
+    border: 0;
+    background-color: #FFC300;
+    color: #000;
+}
+
+.btnVerde{
+    border: 0;
+    background-color: #317F54;
+    color: white;
+}
+
+.btnVermelho{
+    border: 0;
+    background-color: #C1121F;
+    color: white;
+}
+
+.btnMarrom{
+    border: 0;
+    background-color: #BB6D00;
+    color: white;
+}
+
+.btnCinza{
+    border: 0;
+    background-color: #808080;
+    color: white;
+}
+
+.btnLaranja{
+    border: 0;
+    background-color: #FFA500;
+    color: white;
+}
+
+.btnPreto{
+    border: 0;
+    background-color: #000000;
+    color: white;
+}
+
+.btnRoxo{
+    border: 0;
+    background-color: #800080;
+    color: white;
+}
+
+.btnBranco{
+    border: 0;
+    border: 1px solid #000;
+    color: #000;
+}
