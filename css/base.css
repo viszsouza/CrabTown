@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Chau+Philomene+One:ital@0;1&display=swap');
+
+/* Variaveis */
+:root{
+    --branco: #F7F7F7;
+    --preto: #000000;
+    --azul: #023E8A;
+    --vermelho: #c1121f;
+    --amarelo: #FFC300;
+    --verde: #317F54;
+    --shadow: rgba(0, 0, 0, 0.468) 0px 5px 15px;
+    --fundo: rgba(0, 0, 0, 0.7)
+}
+
+/* Fontes 
+
+Caladea: CSS classes
+
+.caladea-regular {
+    font-family: "Caladea", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.caladea-bold {
+    font-family: "Caladea", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.caladea-regular-italic {
+    font-family: "Caladea", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.caladea-bold-italic {
+    font-family: "Caladea", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+Chau Philomene One: CSS classes
+
+.chau-philomene-one-regular {
+    font-family: "Chau Philomene One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.chau-philomene-one-regular-italic {
+    font-family: "Chau Philomene One", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* Estilo para impedir de selecionar imagens e arrastá-las pela tela */
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Whatsapp flutuante */
+.whatsapp img{
+    position: fixed;
+    width: 100px;
+    bottom: 0;
+    margin-bottom: 75px;
+    right: 0;
+    margin-right: 75px;
+    transition: 300ms;
+
+    z-index: 99;
+}
+
+.whatsapp img:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 750px) {
+    .whatsapp img{
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* NavBar */
+nav{
+    display: flex;
+    padding: 0px 20px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+
+    font-family: "Chau Philomene One", sans-serif;
+
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.logo img{
+    width: 100px;
+    transition: 300ms;
+    filter: drop-shadow(0px 0px 30px var(--verde));
+}
+
+.logo img:hover{
+    transform: scale(1.1);
+}
+
+.nav-list{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-list a{
+    padding-block: 15px;
+    font-weight: 600;
+    transition: 300ms;
+    
+}
+
+.roxo{
+    color: var(--verde);
+}
+
+.roxo:hover{
+    text-decoration: underline;
+}
+
+.nav-orç{
+    padding: 5px 15px;
+    color: var(--branco);
+    background-color: var(--verde);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.nav-orç:hover{
+    background-color: var(--preto);
+}
+
+.nav-list a:hover{
+    font-size: 18px;
+}
+
+/* Hamburguer */
+.hamburguer{
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid var(--verde);
+    cursor: pointer;
+}
+
+.hamburguer::after, .hamburguer::before{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--verde);
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+    .hamburguer{
+        display: block;
+        z-index: 1;
+    }
+
+    nav{
+        justify-content: space-between;
+    }
+
+    .nav-list{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--branco);
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-in-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+
+        pointer-events: none;
+    }
+
+    .nav-list a{
+        margin-top: 150px;
+        font-size: 20px;
+        opacity: 0;
+    }
+
+    .nav-list li:nth-child(1) a{
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a{
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a{
+        transition: 0.5s 0.6s;
+    }
+
+    .nav-list li:nth-child(4) a{
+        transition: 0.5s 0.8s;
+    }
+
+    .nav-list li:nth-child(5) a{
+        transition: 0.5s 1s;
+    }
+
+    .nav-list li:nth-child(6) a{
+        transition: 0.5s 1.2s;
+    }
+
+    .nav-list li:nth-child(7) a{
+        transition: 0.5s 1.4s;
+    }
+
+    .nav-list li:nth-child(8) a{
+        transition: 0.5s 1.6s;
+    }
+
+    /* Animação */
+
+    .nav.active .nav-list{
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a{
+        opacity: 1;
+    }
+
+    .nav.active .hamburguer{
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburguer::before{
+        transform:  rotate(135deg);
+    }
+
+    .nav.active .hamburguer::after{
+        transform:  rotate(-135deg);
+        top: -7px;
+    }
+}
+
+/* Footer */
+footer{
+    padding: 60px 40px 30px 60px;
+    background-color: var(--preto);
+}
+/* Primeira parte */
+.footer-sec{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-h3{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--verde);
+
+    font-family: "Chau Philomene One", sans-serif;
+}
+
+.footer-content div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-info{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--branco);
+
+    font-family: "Caladea", serif;
+}
+
+/* Linha divisória */
+#footer-linha-divisoria{
+    width: 100%;
+    height: 1px;
+    background-color: var(--branco);
+    margin: 60px 0 30px 0;
+}
+
+/* Segunda parte */
+.footer-copy{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--branco);
+    transition: 300ms;
+
+    font-family: "Caladea", serif;
+}
+
+.footer-copy:hover{
+    color: var(--verde);
+}
+
+.footer-redes-sociais{
+    display: flex;
+    gap: 10px;
+}
+
+.footer-icon{
+    width: 20px;
+    height: 20px;
+    color: var(--branco);
+}
+
+@media (max-width: 750px) {
+    /* Footer */
+    footer{
+        padding: 40px 20px;
+    }
+
+    .footer-sec{
+    flex-direction: column;
+    gap: 50px;
+    }
+
+    .footer-content{
+    width: auto;
+    }
+}
