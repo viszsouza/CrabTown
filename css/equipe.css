@@ -28,9 +28,15 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
+    box-shadow: 1px 1px 12px var(--verde);
     border-radius: 10px;
     padding:  20px 65px;
     background-color: #000000;
+    transition: .3s;
+}
+
+.card:hover{
+    scale: 1.1;
 }
 
 /* Imagem do card */
@@ -80,4 +86,15 @@ main{
 
 .linkedin:hover{
     color: #3A7ED4;
+}
+
+
+/* Animação Fade In */
+.fadeIn{
+    animation: fadeIN .5s linear;
+}
+
+@keyframes fadeIN{
+    from{opacity: 0}
+    to{opacity: 1}
 }
