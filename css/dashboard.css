@@ -1,1 +1,105 @@
 @import url("base.css");
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Garante que a altura da página seja total */
+}
+
+/* Layout principal */
+.main-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  height: 100vh; /* Garante que a sidebar ocupe 100% da altura da página */
+  position: relative;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #ddd;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-text img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.logo-text h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.logo-text h2 span {
+  font-size: 12px;
+  color: gray;
+  margin-left: 5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between; /* Para alinhar os elementos (99+ e seta) à direita */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+/* Apenas adicionando a classe .spaced para criar um espaço específico para o "99+" */
+.spaced {
+    margin-left: 25px; /* Adiciona um espaço entre o nome "Sixteen" e o "99+" */
+}
+
+.sidebar ul li a:hover {
+  background-color: #e9ecef;
+}
+
+.sidebar ul li.active a {
+  background-color: #dee2e6;
+}
+
+.sidebar ul li a img {
+  margin-right: 10px;
+  height: 20px;
+}
+
+.sidebar ul li a .badge {
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.sidebar ul li a .arrow {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/* Conteúdo principal */
+.content {
+  flex: 1;
+  padding: 20px;
+}

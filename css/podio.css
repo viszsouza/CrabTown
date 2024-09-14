@@ -1,0 +1,127 @@
+@import url("base.css");
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2E7D32;
+    color: white;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .ranking-container {
+    background-color: white;
+    color: #2E7D32;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  ul.ranking-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li.ranking-item {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  li.ranking-item.gold {
+    background-color: #FFC300;
+    color: #2E7D32;
+  }
+  
+  li.ranking-item.silver {
+    background-color: #C5C3C3;
+    color: #2E7D32;
+  }
+  
+  li.ranking-item.bronze {
+    background-color: #F49004;
+    color: #2E7D32;
+  }
+  
+  li.ranking-item.highlight {
+    background-color: #00695C;
+    color: white;
+  }
+  
+  .score {
+    font-size: 16px;
+    color: #317F54;
+  }
+  
+  button#back-btn {
+    background-color: #FFEB3B;
+    color: #2E7D32;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button#back-btn:hover {
+    background-color: #FDD835;
+  }
+  
+  /* Navbar estilos */
+  .navbar {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin-left: 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .navbar ul li a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  .navbar .logo img {
+    height: 40px;
+  }
+  
+  .navbar .title {
+    color: gray;
+    font-size: 16px;
+  }
+  
