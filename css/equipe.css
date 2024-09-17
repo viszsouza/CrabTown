@@ -10,7 +10,7 @@ main{
 }
 
 /* Título da página */
-.equipe-h1{
+main h1{
     font-size: 48px;
     font-family: "Chau Philomene One", sans-serif;
 }
