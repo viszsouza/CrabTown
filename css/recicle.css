@@ -18,6 +18,7 @@ main h1{
 
 section{
     position: relative;
+    margin-bottom: 50px;
 }
 
 .materialReciclavel{
@@ -27,11 +28,18 @@ section{
 section h2{
     margin: 0 auto;
     margin-bottom: 40px;
-    border-bottom: 3px solid var(--amarelo);
     font-size: 35px;
-    font-family: "Caladea", serif;
     font-weight: 600;
     font-style: normal;
+    font-family: "Caladea", serif;
+}
+
+#metais{
+    border-bottom: 3px solid var(--amarelo);
+}
+
+#plastico{
+    border-bottom: 3px solid var(--vermelho);
 }
 
 .contentSlide{
@@ -132,7 +140,14 @@ section h2{
 
 .block-acessarIdentifica button:hover{
     scale: 1.1;
+}
+
+.acessar-amarelo:hover{
     background-color: var(--amarelo);
+}
+
+.acessar-vermelho:hover{
+    background-color: var(--vermelho);
 }
 
 .identificador{
@@ -144,4 +159,8 @@ section h2{
 
 .amarelo{
     background-color: var(--amarelo);
+}
+
+.vermelho{
+    background-color: var(--vermelho);
 }
