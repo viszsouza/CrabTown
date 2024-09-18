@@ -3,7 +3,6 @@ function direcao(e){
 
     // Mover para esquerda
     if(e == 1){
-        
         direcao.scrollLeft = direcao.scrollLeft - 400;  // O valor tem que ser maior que a largura do card
     } 
     // Mover para direita
