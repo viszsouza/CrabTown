@@ -42,6 +42,10 @@ section h2{
     border-bottom: 3px solid var(--vermelho);
 }
 
+#papeis{
+    border-bottom: 3px solid var(--azul);
+}
+
 .contentSlide{
     width: 1100px;
     display: flex;
@@ -150,6 +154,10 @@ section h2{
     background-color: var(--vermelho);
 }
 
+.acessar-azul:hover{
+    background-color: var(--azul);
+}
+
 .identificador{
     position: absolute;
     right: -15px;
@@ -163,4 +171,8 @@ section h2{
 
 .vermelho{
     background-color: var(--vermelho);
+}
+
+.azul{
+    background-color: var(--azul);
 }
