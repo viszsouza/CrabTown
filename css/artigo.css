@@ -1,5 +1,18 @@
 @import url("base.css");
 
+.migalhas{
+    position: absolute;
+    top: 20%;
+    left: 18%;
+}
+
+.migalhas p{
+    color: var(--preto);
+    font-family: "Caladea", serif;
+    font-weight: 600;
+    font-size: 17px;
+}
+
 .artigo-mangue{
     background-color: var(--branco);
     padding: 40px 20px;
@@ -37,6 +50,7 @@
     align-items: center;
     gap: 20px;
 
+    max-width: 1100px;
 }
 
 .container-textos-mangue{
@@ -45,8 +59,17 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
+}
 
-    width: 30%;
+.container-textos-artigo{
+    max-width: 1100px;
+}
+
+.container-textos-artigo p{
+    color: var(--preto);
+    font-family: "Caladea", serif;
+    font-weight: 600;
+    font-size: 17px;
 }
 
 .container-item-mangue{
@@ -84,7 +107,7 @@
 }
 
 .container-imagem-mangue img{
-    width: 80%;
+    width: 500px;
     height: 400px;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -103,92 +126,34 @@
     margin-top: 10px;
 }
 
-/* Contato */
-.contato{
-    background-color: var(--verde);
-    padding: 40px 20px;
-}
+@media (min-width: 751px) and (max-width: 1224px) {
+    .migalhas{
+        top: 10%;
+        left: 10%;
+    }
 
-.contato h1{
-    color: var(--branco);
-    font-family: "Chau Philomene One", sans-serif;
-    font-size: 28px;
-
-    text-align: center;
-}
-
-.formulario{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.contato form{
-    padding: 40px;
-    background-color: var(--branco);
-    border-radius: 25px;
-    box-shadow: var(--shadow);
-
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contato form h1{
-    color: var(--preto);
-}
-
-.contato form input{
-    background-color: var(--verde);
-    border-radius: 10px;
-    border: solid 2px #344e41;
-    padding: 10px 20px;
-
-}
-
-.contato form input::placeholder{
-    color: var(--branco);
-    font-family: "Caladea", serif;
-    font-size: 15px;
-}
-
-.contato form button{
-    padding: 10px 20px;
-    width: 100%;
-    border-radius: 10px;
-    border: none;
-    background-color: #344e41;
-    color: var(--branco);
-
-    transition: 300ms;
-}
-
-.contato form button:hover{
-    background-color: var(--preto);
-}
-
-.contato form a{
-    width: 80px;
-}
-
-.perguntas{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 20px;
-}
-
-@media (max-width: 750px) {
     .container-info-mangue{
         flex-direction: column;
     }
 
-    .container-textos-mangue{
-        width: 80%;
+    .container-imagem-mangue img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .migalhas{
+
+        position: unset;
+        top: 10%;
+        left: 10%;
     }
 
-    .perguntas{
-        grid-template-columns: auto;
+    .container-info-mangue{
+        flex-direction: column;
+    }
+
+    .container-imagem-mangue img{
+        width: 100%;
     }
 }
