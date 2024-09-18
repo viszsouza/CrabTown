@@ -46,6 +46,10 @@ section h2{
     border-bottom: 3px solid var(--azul);
 }
 
+#vidro{
+    border-bottom: 3px solid var(--verde);
+}
+
 .contentSlide{
     width: 1100px;
     display: flex;
@@ -158,6 +162,10 @@ section h2{
     background-color: var(--azul);
 }
 
+.acessar-verde:hover{
+    background-color: var(--verde);
+}
+
 .identificador{
     position: absolute;
     right: -15px;
@@ -175,4 +183,8 @@ section h2{
 
 .azul{
     background-color: var(--azul);
+}
+
+.verde{
+    background-color: var(--verde);
 }
