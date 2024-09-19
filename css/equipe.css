@@ -107,7 +107,16 @@ main h1{
 
 
 /* Media query */
-@media screen and (max-width: 389px) {}
+@media screen and (max-width: 389px) {
+    main{
+        padding: 40px 30px;
+    }
+
+    /* Título da página */
+    main h1{
+        text-align: center;
+    }
+}
 @media only screen and (min-width: 390px) and (max-width: 458px) {
     /* Título da página */
     main h1{
