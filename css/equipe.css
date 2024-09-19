@@ -6,7 +6,7 @@ main{
     justify-content: center;
     flex-direction: column;
     gap: 45px;
-    padding: 90px 20px;
+    padding: 90px 30px;
 }
 
 /* Título da página */
@@ -102,4 +102,15 @@ main h1{
 @keyframes fadeIN{
     from{opacity: 0}
     to{opacity: 1}
+}
+
+
+
+/* Media query */
+@media screen and (max-width: 389px) {}
+@media only screen and (min-width: 390px) and (max-width: 458px) {
+    /* Título da página */
+    main h1{
+        text-align: center;
+    }
 }
