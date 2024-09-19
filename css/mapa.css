@@ -1,1 +1,157 @@
 @import url("base.css");
+
+body{
+    background-color: #D9D9D9;
+}
+
+a:visited{
+    color: inherit;
+}
+
+.sidebar{
+    position: fixed;
+    left: -350px;
+    width: 350px;
+    height: 100vh;
+    background-color: #317F54;
+    transition: all .5s ease;
+}
+
+.sidebar h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    user-select: none;
+}
+
+.sidebar ul{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    list-style-type: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+    font-size: 20px;
+    color: #fff;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: .4s;
+}
+
+ul li:hover a{
+    padding-left: 10px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+#check{
+    display: none;
+}
+
+label #btn,
+label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background-color: #317F54;
+}
+
+label #btn{
+    left: 80px;
+    top: 120px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -300px;
+    top: 120px;
+    font-size: 30px;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 300px;
+}
+
+.main-container {
+    margin-left: 405px;
+    margin-right: 40px;
+    height: 600px;
+    justify-content: center; 
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+.main-container h1{
+    margin-top: 20px;
+    font-family: "Robot", sans-serif;
+}
+
+.main-content{
+    border-radius: 15px;
+    margin-top: 50px;
+    max-width: 1200px;
+    height: 500px;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lixo-amarelo {
+    color: yellow;
+}
+
+.lixo-azul {
+    color: blue;
+}
+
+.lixo-branco {
+    color: white;
+}
+
+.lixo-cinza {
+    color: gray;
+}
+
+.lixo-laranja {
+    color: orange;
+}
+
+.lixo-marrom {
+    color: brown;
+}
+
+.lixo-preto {
+    color: black;
+}
+
+.lixo-roxo {
+    color: purple;
+}
+
+.lixo-verde {
+    color: green;
+}
+
+.lixo-vermelho {
+    color: red;
+}

@@ -14,7 +14,8 @@
     <meta property="og:site_name" content="CrabTown"/>
 
     <link rel="stylesheet" href="css/mapa.css">
-    <script src="js/scripts.js" defer></script>    
+    <script src="js/scripts.js" defer></script>  
+    <script src="https://kit.fontawesome.com/1ee4abbf49.js" crossorigin="anonymous"></script>  
 </head>
 <body>
     <!-- Navbar -->
@@ -22,7 +23,6 @@
         <a href="index.html" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
 
         <button class="hamburguer"></button>
-
         <ul class="nav-list">
             <li><a href="recicle.html" class="roxo">Recicle</a></li>
             <li><a href="mapa.html" class="roxo">Mapa</a></li>
@@ -34,45 +34,32 @@
         </ul>
     </nav>
 
+    <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fa-solid fa-bars" id="btn"></i>
+            <i class="fa-solid fa-xmark" id="cancel"></i>
+        </label>
+    <div class="sidebar">
+        <h1>Tipos de Mapas</h1>
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-amarelo"></i>Lixo Amarelo</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-azul"></i>Lixo Azul</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-branco"></i>Lixo Branco</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-cinza"></i>Lixo Cinza</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-laranja"></i>Lixo Laranja</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-marrom"></i>Lixo Marrom</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-preto"></i>Lixo Preto</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-roxo"></i>Lixo Roxo</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-verde"></i>Lixo Verde</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash lixo-vermelho"></i>Lixo Vermelho</a></li>
+        </ul>
+    </div>
 
-        <!-- Footer -->
-    <footer>
-        <!-- Primeira parte -->
-        <section class="footer-sec">
-            <div class="footer-content">
-                <h3 class="footer-h3">Contato</h3>
+    <div class="main-container">
+        <h1>Locais para Reciclagem</h1>
+        <div class="main-content">
 
-                <div>
-                    <p class="footer-info">Instagram: @crabtown</p>
-                    <p class="footer-info">WhatsApp: (81) 9 0000-0000</p>
-                    <p class="footer-info">E-mail: contatocrabtown@gmail.com</p>
-                </div>
-            </div>
-            <div class="footer-content">
-                <h3 class="footer-h3">Localização</h3>
-
-                <div>
-                    <p class="footer-info">Recife, Pernambuco</p>
-                    <!-- <p class="footer-info">CEP: 52050-280</p> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Linha divisória -->
-        <div id="footer-linha-divisoria"></div>
-
-        <!-- Segunda parte -->
-        <section class="footer-sec" id="footer-sec2">
-            <a href="https://www.instagram.com/visz.dev/" target="_blank"><p class="footer-copy">&copy; 2024 Visz, Inc.</p></a>
-
-            <div class="footer-redes-sociais">
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/visz.dev/" target="_blank">
-                    <img src="images/FeInstagram.png" class="footer-icon" alt="">
-                </a> 
-            </div>
-        </section>
-    </footer>
-
+        </div>
+    </div>
 </body>
 </html>
