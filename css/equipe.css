@@ -25,12 +25,13 @@ main h1{
 
 /* Card */
 .card{
+    width: 290px;
     display: flex;
     align-items: center;
     flex-direction: column;
     box-shadow: 1px 1px 12px var(--verde);
     border-radius: 10px;
-    padding:  20px 65px;
+    padding:  20px 5px;
     background-color: #000000;
     transition: .3s;
 }
@@ -52,17 +53,20 @@ main h1{
 /* Nome do card */
 .card-nome{
     margin-bottom: 10px;
-    /* Precisa da font-family */
-    font-size: 15px;
+    font-family: "Chau Philomene One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    letter-spacing: 1.5px;
     color: #fff;
 }
 
 /* Cargo do card */
 .card-cargo{
     margin-bottom: 45px;
-    /* Precisa da font-family */
-    font-size: 12px;
+    font-size: 15px;
     font-weight: normal;
+    letter-spacing: 1.5px;
     color: #c4c4c4;
 }
 
