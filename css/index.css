@@ -1,1 +1,60 @@
 @import url("base.css");
+
+/* Inicio */
+.inicio{
+    background-image: url('/images/inicioPC.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    padding: 40px 20px;
+    object-fit: cover;
+}
+
+.container-inicio{
+    position: relative;
+    margin-left: 5%;
+    width: 40%;
+    height: 500px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-inicio h1{
+    font-family: 'Alta', sans-serif;
+    font-size: 36px;
+    color: var(--branco);
+}
+
+.container-inicio p{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    color: var(--branco);
+}
+
+.buttons-inicio{
+    display: flex;
+    gap: 20px;
+}
+
+.buttons-inicio button{
+    background-color: var(--branco);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+
+    color: var(--azul);
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+
+    transition: 300ms;
+    box-shadow: var(--shadow);
+}
+
+.buttons-inicio button:hover{
+    background-color: var(--bege);
+    transform: scale(1.05);
+}
