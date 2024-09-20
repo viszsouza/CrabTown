@@ -70,6 +70,8 @@
     font-family: "Caladea", serif;
     font-weight: 600;
     font-size: 17px;
+
+    text-align: justify;
 }
 
 .container-item-mangue{
@@ -83,6 +85,8 @@
     font-family: "Caladea", serif;
     font-weight: 700;
     font-size: 17px;
+
+    text-align: justify;
 }
 
 .container-item-mangue button{

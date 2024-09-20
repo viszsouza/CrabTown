@@ -141,15 +141,15 @@
 }
 
 .contato form input{
-    background-color: var(--verde);
+    background-color: transparent);
     border-radius: 10px;
-    border: solid 2px #344e41;
+    border: solid 2px #6a6a6a;
     padding: 10px 20px;
 
 }
 
 .contato form input::placeholder{
-    color: var(--branco);
+    color: var(--preto);
     font-family: "Caladea", serif;
     font-size: 15px;
 }
@@ -159,7 +159,7 @@
     width: 100%;
     border-radius: 10px;
     border: none;
-    background-color: #344e41;
+    background-color: var(--verde);
     color: var(--branco);
 
     transition: 300ms;
