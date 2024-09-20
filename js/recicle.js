@@ -14,6 +14,17 @@ function direcao(e){
             direcao.scrollLeft = direcao.scrollLeft + 300;  // O valor tem que ser maior que a largura do card
         }
     }
+    // Tela com (min-width: 599px) and (max-width: 768px) de largura
+    else if( larguraJanela >= 599 && larguraJanela <= 768 ){
+        // Mover para esquerda
+        if(e == 1){
+            direcao.scrollLeft = direcao.scrollLeft - 300;  // O valor tem que ser maior que a largura do card
+        } 
+        // Mover para direita
+        else if(e == 2){
+            direcao.scrollLeft = direcao.scrollLeft + 300;  // O valor tem que ser maior que a largura do card
+        }
+    }
     // Valor padrão
     else{
         // Mover para esquerda
@@ -35,6 +46,17 @@ function carrosselPlastico(e){
 
     // Tela com (min-width: 767px) and (max-width: 992px) de largura
     if( larguraJanela >= 767 && larguraJanela <= 992 ){
+        // Mover para esquerda
+        if(e == 1){
+            direcaoPlastico.scrollLeft = direcaoPlastico.scrollLeft - 300;  // O valor tem que ser maior que a largura do card
+        } 
+        // Mover para direita
+        else if(e == 2){
+            direcaoPlastico.scrollLeft = direcaoPlastico.scrollLeft + 300;  // O valor tem que ser maior que a largura do card
+        }
+    }
+    // Tela com (min-width: 599px) and (max-width: 768px) de largura
+    else if( larguraJanela >= 599 && larguraJanela <= 768 ){
         // Mover para esquerda
         if(e == 1){
             direcaoPlastico.scrollLeft = direcaoPlastico.scrollLeft - 300;  // O valor tem que ser maior que a largura do card
@@ -74,6 +96,17 @@ function carrosselPapeis(e){
             direcaoPapeis.scrollLeft = direcaoPapeis.scrollLeft + 300;  // O valor tem que ser maior que a largura do card
         }
     }
+    // Tela com (min-width: 599px) and (max-width: 768px) de largura
+    else if( larguraJanela >= 599 && larguraJanela <= 768 ){
+        // Mover para esquerda
+        if(e == 1){
+            direcaoPapeis.scrollLeft = direcaoPapeis.scrollLeft - 300;  // O valor tem que ser maior que a largura do card
+        } 
+        // Mover para direita
+        else if(e == 2){
+            direcaoPapeis.scrollLeft = direcaoPapeis.scrollLeft + 300;  // O valor tem que ser maior que a largura do card
+        }
+    }
     // Valor padrão
     else{
         // Mover para esquerda
@@ -95,6 +128,17 @@ function carrosselVidro(e){
 
     // Tela com (min-width: 767px) and (max-width: 767px) de largura
     if( larguraJanela >= 767 && larguraJanela <= 992 ){
+        // Mover para esquerda
+        if(e == 1){
+            direcaoVidro.scrollLeft = direcaoVidro.scrollLeft - 300;  // O valor tem que ser maior que a largura do card
+        } 
+        // Mover para direita
+        else if(e == 2){
+            direcaoVidro.scrollLeft = direcaoVidro.scrollLeft + 300;  // O valor tem que ser maior que a largura do card
+        }
+    }
+    // Tela com (min-width: 599px) and (max-width: 768px) de largura
+    else if( larguraJanela >= 599 && larguraJanela <= 768 ){
         // Mover para esquerda
         if(e == 1){
             direcaoVidro.scrollLeft = direcaoVidro.scrollLeft - 300;  // O valor tem que ser maior que a largura do card
