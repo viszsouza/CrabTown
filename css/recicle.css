@@ -422,6 +422,17 @@ form h3{
     .contentSlide{
         width: 350px;
     }
+
+    /* Section Contato */
+    .contato{
+        width: 100vw;
+    }
+
+    /* Form */
+    form{
+        width: 80%;
+        padding: 20px 40px;
+    }
 }
 @media only screen and (min-width: 767px) and (max-width: 992px) {
     /* Caixa do carrossel */
