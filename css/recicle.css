@@ -371,6 +371,24 @@ form h3{
     .block{
         width: 240px;
     }
+    
+    /* Section Contato */
+    .contato{
+        width: 100vw;
+        padding: 0 10px;
+    }
+
+    /* Título da section Contato */
+    .contato h2{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    /* Form */
+    form{
+        width: 90%;
+        padding: 20px 25px;
+    }
 }
 @media only screen and (min-width: 459px) and (max-width: 598px) {
     main{
