@@ -284,7 +284,42 @@ form h3{
 /* Media query */
 @media screen and (max-width: 389px) {}
 @media only screen and (min-width: 390px) and (max-width: 458px) {}
-@media only screen and (min-width: 459px) and (max-width: 598px) {}
+@media only screen and (min-width: 459px) and (max-width: 598px) {
+    main{
+        padding: 50px 40px 0 40px;
+    }
+
+    /* Título da página */
+    main h1{
+        margin: 10px 0 0 0;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    /* Título da section dos matériais */
+    section h2{
+        font-size: 30px;
+    }
+
+    /* Caixa do carrossel */
+    .contentSlide{
+        width: 250px;
+    }
+
+    /* Botão esquerdo do carrossel */
+    .btn-left{
+        left: -60px;
+    }
+
+    /* Botão direito do carrossel */
+    .btn-right{
+        right: -60px;
+    }
+    /* Card do projeto */
+    .block{
+        width: 250px;
+    }
+}
 @media only screen and (min-width: 599px) and (max-width: 768px) {
     main{
         padding: 50px 40px 0 40px;
