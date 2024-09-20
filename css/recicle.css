@@ -198,3 +198,83 @@ section h2{
 .verde{
     background-color: var(--verde);
 }
+
+/* Section Contato */
+.contato{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--verde);
+}
+
+/* Título da section Contato */
+.contato h2{
+    font-size: 48px;
+    font-family: "Chau Philomene One", sans-serif;
+    letter-spacing: 1px;
+    color: var(--branco);
+}
+
+/* Form */
+form{
+    width: 622px;
+    height: 440px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 60px;
+    background-color: var(--branco);
+}
+
+/* Título do form */
+form h3{
+    text-align: center;
+    font-size: 28px;
+    font-family: "Chau Philomene One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--preto);
+}
+
+/* Campos de entrada do form */
+.formCampos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input e textarea do form */
+.formCampos input, .formCampos textarea{
+    width: 100%;
+    border: 2px solid var(--preto);
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: var(--verde);
+}
+
+.formCampos input::placeholder, .formCampos textarea::placeholder{
+    font-size: 15px;
+    font-family: "Caladea", serif;
+    color: var(--branco);
+}
+
+/* Botão do form */
+.contato form button{
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    color: var(--branco);
+    background-color: #344e41;
+    transition: 300ms;
+}
+
+.contato form button:hover{
+    background-color: var(--preto);
+}
