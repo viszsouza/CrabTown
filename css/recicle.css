@@ -286,12 +286,16 @@ form h3{
 @media only screen and (min-width: 390px) and (max-width: 458px) {}
 @media only screen and (min-width: 459px) and (max-width: 598px) {}
 @media only screen and (min-width: 599px) and (max-width: 768px) {}
-@media only screen and (min-width: 767px) and (max-width: 992px) {}
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+    /* Caixa do carrossel */
+    .contentSlide{
+        width: 550px;
+    }
+}
 @media only screen and (min-width: 993px) and (max-width: 1179px) {
     /* Caixa do carrossel */
     .contentSlide{
         width: 750px;
-        background-color: lightblue;
     }
 }
 @media only screen and (min-width: 1180px) and (max-width: 1350px) {
