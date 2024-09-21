@@ -5,11 +5,15 @@
 /* Variaveis */
 :root{
     --branco: #F7F7F7;
+    --cinza: #C8E6C9;
     --preto: #000000;
     --azul: #023E8A;
     --vermelho: #c1121f;
     --amarelo: #FFC300;
     --verde: #317F54;
+    --gold: #ffc400;
+    --silver: #C5C3C3;
+    --bronze: #F49004;
     --shadow: rgba(0, 0, 0, 0.468) 0px 5px 15px;
     --fundo: rgba(0, 0, 0, 0.7)
 }

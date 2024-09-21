@@ -17,13 +17,13 @@ body {
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #f8f9fa;
+  background-color: var(--branco);
   padding: 20px;
   height: 100vh; /* Garante que a sidebar ocupe 100% da altura da página */
   position: relative;
   top: 0;
   left: 0;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--cinza);
 }
 
 .logo-text {
@@ -44,7 +44,7 @@ body {
 
 .logo-text h2 span {
   font-size: 12px;
-  color: gray;
+  color: var(--cinza);
   margin-left: 5px;
 }
 
@@ -59,7 +59,7 @@ body {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #000;
+  color: var(--preto);
   font-size: 16px;
   padding: 10px;
   align-items: center;
@@ -67,17 +67,18 @@ body {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
+
 /* Apenas adicionando a classe .spaced para criar um espaço específico para o "99+" */
 .spaced {
     margin-left: 25px; /* Adiciona um espaço entre o nome "Sixteen" e o "99+" */
 }
 
 .sidebar ul li a:hover {
-  background-color: #e9ecef;
+  background-color: var(--branco);
 }
 
 .sidebar ul li.active a {
-  background-color: #dee2e6;
+  background-color: var(--branco);
 }
 
 .sidebar ul li a img {
@@ -102,4 +103,83 @@ body {
 .content {
   flex: 1;
   padding: 20px;
+}
+
+/* Media Queries */
+
+/* max-width: 389px (para telas pequenas) */
+@media (max-width: 389px) {
+  .sidebar {
+    width: 200px; /* Ajustando o tamanho da sidebar para telas pequenas */
+    padding: 15px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+}
+
+/* min-width: 390px e max-width: 458px */
+@media (min-width: 390px) and (max-width: 458px) {
+  .sidebar {
+    width: 220px;
+    padding: 15px;
+  }
+  .sidebar ul li a {
+    font-size: 15px;
+  }
+}
+
+/* min-width: 459px e max-width: 598px */
+@media (min-width: 459px) and (max-width: 598px) {
+  .sidebar {
+    width: 240px;
+    padding: 20px;
+  }
+  .sidebar ul li a {
+    font-size: 16px;
+  }
+}
+
+/* min-width: 599px e max-width: 768px */
+@media (min-width: 599px) and (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+  }
+  .sidebar ul li a {
+    font-size: 16px;
+  }
+}
+
+/* min-width: 767px e max-width: 992px */
+@media (min-width: 767px) and (max-width: 992px) {
+  .sidebar {
+    width: 260px;
+    padding: 25px;
+  }
+  .sidebar ul li a {
+    font-size: 17px;
+  }
+}
+
+/* min-width: 993px e max-width: 1179px */
+@media (min-width: 993px) and (max-width: 1179px) {
+  .sidebar {
+    width: 270px;
+    padding: 25px;
+  }
+  .sidebar ul li a {
+    font-size: 18px;
+  }
+}
+
+/* min-width: 1180px e max-width: 1350px */
+@media (min-width: 1180px) and (max-width: 1350px) {
+  .sidebar {
+    width: 280px;
+    padding: 30px;
+  }
+  .sidebar ul li a {
+    font-size: 18px;
+  }
 }
