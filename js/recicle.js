@@ -325,3 +325,47 @@ const btnMetais5 = document.getElementById("btnMetais5");
 btnMetais5.addEventListener("click", function(){
     window.open("https://youtu.be/gT8QDibpAEs?si=b4zCzDydOVgID0gU&t=7");
 });
+
+
+// Redirecionamento - Plástico
+// Card 1
+const btnPlastico1 = document.getElementById("btnPlastico1");
+btnPlastico1.addEventListener("click", function(){
+    window.open("https://youtu.be/xvB3dCkDwM0?si=X9zQCoPlY2cmWJje&t=9");
+});
+
+// Card 2
+const btnPlastico2 = document.getElementById("btnPlastico2");
+btnPlastico2.addEventListener("click", function(){
+    window.open("https://youtu.be/X3_9LZmm4uk?si=rBWtLTik6gab_ApC&t=338");
+});
+
+// Card 3
+const btnPlastico3 = document.getElementById("btnPlastico3");
+btnPlastico3.addEventListener("click", function(){
+    window.open("https://youtu.be/X3_9LZmm4uk?si=b5CUahi_Rqa5_YmN&t=78");
+});
+
+// Card 4
+const btnPlastico4 = document.getElementById("btnPlastico4");
+btnPlastico4.addEventListener("click", function(){
+    window.open("https://youtu.be/X3_9LZmm4uk?si=pvUAlnB6UfRY2tck&t=6");
+});
+
+// Card 5
+const btnPlastico5 = document.getElementById("btnPlastico5");
+btnPlastico5.addEventListener("click", function(){
+    window.open("https://youtu.be/X3_9LZmm4uk?si=wqxVLkc8PxaK8YmV&t=194");
+});
+
+// Card 6
+const btnPlastico6 = document.getElementById("btnPlastico6");
+btnPlastico6.addEventListener("click", function(){
+    window.open("https://youtu.be/X3_9LZmm4uk?si=CanFtdtlbncFASRE&t=131");
+});
+
+// Card 7
+const btnPlastico7 = document.getElementById("btnPlastico7");
+btnPlastico7.addEventListener("click", function(){
+    window.open("https://youtu.be/X3_9LZmm4uk?si=4Njf_qhkJoj-CyhR&t=412");
+});
