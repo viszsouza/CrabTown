@@ -99,7 +99,7 @@ section h2{
 
 
 /* Card do projeto */
-.block{ 
+.block{
     flex-shrink: 0;
     width: 285px;
     border-radius: 10px;
