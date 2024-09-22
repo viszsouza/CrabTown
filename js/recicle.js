@@ -369,3 +369,41 @@ const btnPlastico7 = document.getElementById("btnPlastico7");
 btnPlastico7.addEventListener("click", function(){
     window.open("https://youtu.be/X3_9LZmm4uk?si=4Njf_qhkJoj-CyhR&t=412");
 });
+
+
+// Redirecionamento - Papéis
+// Card 1
+const btnPapeis1 = document.getElementById("btnPapeis1")
+btnPapeis1.addEventListener("click", function(){
+    window.open("https://youtu.be/K4AQOmsa4n4?si=EdF97W19K5AgFAG3&t=6");
+});
+
+// Card 2
+const btnPapeis2 = document.getElementById("btnPapeis2")
+btnPapeis2.addEventListener("click", function(){
+    window.open("https://youtu.be/K4AQOmsa4n4?si=ghamvB2bIxeS0Oax&t=209");
+});
+
+// Card 3
+const btnPapeis3 = document.getElementById("btnPapeis3")
+btnPapeis3.addEventListener("click", function(){
+    window.open("https://youtu.be/KOlkR7UtUto?si=juukSFzkfiL1uNFe&t=228");
+});
+
+// Card 4
+const btnPapeis4 = document.getElementById("btnPapeis4")
+btnPapeis4.addEventListener("click", function(){
+    window.open("https://youtu.be/9DgW92LIApU?si=BYM8Rx7KHlQED2fD&t=27");
+});
+
+// Card 5
+const btnPapeis5 = document.getElementById("btnPapeis5")
+btnPapeis5.addEventListener("click", function(){
+    window.open("https://youtu.be/K4AQOmsa4n4?si=iPOuyeM3iB3i0e_S&t=518");
+});
+
+// Card 6
+const btnPapeis6 = document.getElementById("btnPapeis6")
+btnPapeis6.addEventListener("click", function(){
+    window.open("https://youtu.be/K4AQOmsa4n4?si=piLuzfyLn__60l-j&t=119");
+});
