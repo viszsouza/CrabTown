@@ -407,3 +407,35 @@ const btnPapeis6 = document.getElementById("btnPapeis6")
 btnPapeis6.addEventListener("click", function(){
     window.open("https://youtu.be/K4AQOmsa4n4?si=piLuzfyLn__60l-j&t=119");
 });
+
+
+// Redirecionamento - Vidro
+// Card 1
+const btnVidro1 = document.getElementById("btnVidro1")
+btnVidro1.addEventListener("click",  function(){
+    window.open("https://youtu.be/lRYPJDcwaTo?si=GGbo7N1a-XGaecCu&t=60");
+});
+
+// Card 2
+const btnVidro2 = document.getElementById("btnVidro2")
+btnVidro2.addEventListener("click",  function(){
+    window.open("https://youtu.be/5xiHs6PNBCU?si=q-LljaFDbvdRo8Jf&t=157");
+});
+
+// Card 3
+const btnVidro3 = document.getElementById("btnVidro3")
+btnVidro3.addEventListener("click",  function(){
+    window.open("https://youtu.be/YOFAH-sVnXU?si=Qik7ryBIbc2cmxA_&t=2");
+});
+
+// Card 4
+const btnVidro4 = document.getElementById("btnVidro4")
+btnVidro4.addEventListener("click",  function(){
+    window.open("https://youtu.be/OGsTr1JTgrE?si=aDq33xFalNNNsc_Z");
+});
+
+// Card 5
+const btnVidro5 = document.getElementById("btnVidro5")
+btnVidro5.addEventListener("click",  function(){
+    window.open("https://youtu.be/Cih3_Ht1Aws?si=M7TuLXdupmb8PKf8&t=18");
+});
