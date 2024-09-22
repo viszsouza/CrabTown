@@ -118,6 +118,7 @@ section h2{
 
 /* Título do card */
 .block-tituloProjeto{
+    height: 20%;
     margin-bottom: 15px;
     text-align: center;
     letter-spacing: 2px;
@@ -134,8 +135,13 @@ section h2{
 
 /* Autor(a) do card */
 .block-span{
-    font-size: 12px;;
+    font-size: 14px;
+    letter-spacing: 1px;
     color: var(--branco);
+}
+
+.block-span strong{
+    margin-right: 2px;
 }
 
 /* Botão do card */
