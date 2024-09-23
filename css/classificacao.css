@@ -27,6 +27,7 @@
     font-family: "Caladea", serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 18px;
 }
 
 .itens p, button{
@@ -114,4 +115,19 @@
     border: 0;
     border: 1px solid #000;
     color: #000;
+}
+
+@media screen and (max-width: 389px) {
+    .title{
+        font-size: 18px;
+    }
+    .itens button{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title{
+        font-size: 22px;
+    }
 }
