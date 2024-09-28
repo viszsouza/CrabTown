@@ -1,8 +1,8 @@
 @import url("base.css");
 
 /* Inicio */
-.inicio{
-    background-image: url('/images/inicioPC.jpg');
+.inicio {
+    background-image: url("../images/inicioPC.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -11,7 +11,7 @@
     object-fit: cover;
 }
 
-.container-inicio{
+.container-inicio {
     position: relative;
     margin-left: 5%;
     width: 40%;
@@ -23,24 +23,24 @@
     gap: 20px;
 }
 
-.container-inicio h1{
-    font-family: 'Alta', sans-serif;
+.container-inicio h1 {
+    font-family: "Alta", sans-serif;
     font-size: 36px;
     color: var(--branco);
 }
 
-.container-inicio p{
-    font-family: 'Montserrat',sans-serif;
+.container-inicio p {
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
     color: var(--branco);
 }
 
-.buttons-inicio{
+.buttons-inicio {
     display: flex;
     gap: 20px;
 }
 
-.buttons-inicio button{
+.buttons-inicio button {
     background-color: var(--branco);
     padding: 10px 20px;
     border-radius: 10px;
@@ -53,19 +53,19 @@
     box-shadow: var(--shadow);
 }
 
-.buttons-inicio button:hover{
+.buttons-inicio button:hover {
     background-color: var(--verde);
     color: var(--branco);
     transform: scale(1.05);
 }
 
 /* Sessão mapa */
-.mapa{
+.mapa {
     background-color: var(--branco);
     padding: 40px 20px;
 }
 
-.container-mapa{
+.container-mapa {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,11 +74,11 @@
     flex-wrap: wrap;
 }
 
-.container-mapa-img img{
+.container-mapa-img img {
     max-width: 500px;
 }
 
-.container-mapa-textos{
+.container-mapa-textos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,13 +87,13 @@
     max-width: 500px;
 }
 
-.container-mapa-textos h1{
+.container-mapa-textos h1 {
     color: var(--preto);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 28px;
 }
 
-.container-mapa-textos p{
+.container-mapa-textos p {
     color: var(--preto);
     font-family: "Caladea", serif;
     font-weight: 600;
@@ -102,7 +102,7 @@
     text-align: justify;
 }
 
-.buttons-mapa button{
+.buttons-mapa button {
     background-color: var(--verde);
     padding: 10px 20px;
     border-radius: 10px;
@@ -116,13 +116,13 @@
     box-shadow: var(--shadow);
 }
 
-.buttons-mapa button:hover{
+.buttons-mapa button:hover {
     background-color: var(--preto);
     transform: scale(1.05);
 }
 
 /* Notícias */
-.noticias{
+.noticias {
     background-color: var(--azul);
     padding: 40px 20px;
 
@@ -132,7 +132,7 @@
     align-items: center;
 }
 
-.noticias-inicio{
+.noticias-inicio {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -140,13 +140,13 @@
     align-items: center;
 }
 
-.noticias-inicio h1{
+.noticias-inicio h1 {
     color: var(--branco);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 28px;
 }
 
-.noticias-inicio p{
+.noticias-inicio p {
     color: var(--branco);
     font-family: "Caladea", serif;
     font-weight: 600;
@@ -155,7 +155,7 @@
     text-align: justify;
 }
 
-.container-noticias{
+.container-noticias {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,7 +163,7 @@
     flex-wrap: wrap;
 }
 
-.item-noticia{
+.item-noticia {
     margin-top: 40px;
     background-color: var(--branco);
     border-radius: 10px;
@@ -171,11 +171,11 @@
     box-shadow: var(--shadow);
 }
 
-.item-noticia img{
+.item-noticia img {
     max-width: 300px;
 }
 
-.textos-noticia{
+.textos-noticia {
     background-color: var(--branco);
     padding: 20px;
     display: flex;
@@ -184,13 +184,13 @@
     gap: 20px;
 }
 
-.textos-noticia h1{
+.textos-noticia h1 {
     color: var(--preto);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 20px;
 }
 
-.textos-noticia p{
+.textos-noticia p {
     color: var(--preto);
     font-family: "Caladea", serif;
     font-weight: 600;
@@ -200,12 +200,12 @@
 }
 
 /* Contato */
-.contato{
+.contato {
     background-color: var(--verde);
     padding: 40px 20px;
 }
 
-.contato h1{
+.contato h1 {
     color: var(--branco);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 28px;
@@ -213,7 +213,7 @@
     text-align: center;
 }
 
-.formulario{
+.formulario {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -221,7 +221,7 @@
     margin-top: 40px;
 }
 
-.contato form{
+.contato form {
     padding: 40px;
     background-color: var(--branco);
     border-radius: 25px;
@@ -232,25 +232,24 @@
     gap: 20px;
 }
 
-.contato form h1{
+.contato form h1 {
     color: var(--preto);
 }
 
-.contato form input{
-    background-color: transparent);
+.contato form input {
+    background-color: transparent;
     border-radius: 10px;
     border: solid 2px #6a6a6a;
     padding: 10px 20px;
-
 }
 
-.contato form input::placeholder{
+.contato form input::placeholder {
     color: var(--preto);
     font-family: "Caladea", serif;
     font-size: 15px;
 }
 
-.contato form button{
+.contato form button {
     padding: 10px 20px;
     width: 100%;
     border-radius: 10px;
@@ -261,22 +260,22 @@
     transition: 300ms;
 }
 
-.contato form button:hover{
+.contato form button:hover {
     background-color: var(--preto);
 }
 
-.contato form a{
+.contato form a {
     width: 80px;
 }
 
-.perguntas{
+.perguntas {
     display: grid;
     grid-template-columns: auto auto;
     gap: 20px;
 }
 
 /* Sobre */
-.sobre{
+.sobre {
     background-color: var(--amarelo);
     padding: 40px 20px;
 
@@ -286,7 +285,7 @@
     align-items: center;
 }
 
-.sobre-inicio{
+.sobre-inicio {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -296,13 +295,13 @@
     max-width: 700px;
 }
 
-.sobre-inicio h1{
+.sobre-inicio h1 {
     color: var(--preto);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 28px;
 }
 
-.sobre-inicio p{
+.sobre-inicio p {
     color: var(--preto);
     font-family: "Caladea", serif;
     font-weight: 600;
@@ -311,7 +310,7 @@
     text-align: center;
 }
 
-.container-sobre{
+.container-sobre {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,7 +318,7 @@
     flex-wrap: wrap;
 }
 
-.item-sobre{
+.item-sobre {
     margin-top: 40px;
     background-color: var(--branco);
     border-radius: 10px;
@@ -327,11 +326,11 @@
     box-shadow: var(--shadow);
 }
 
-.item-sobre img{
+.item-sobre img {
     max-width: 300px;
 }
 
-.textos-sobre{
+.textos-sobre {
     background-color: var(--branco);
     padding: 20px;
     display: flex;
@@ -340,13 +339,13 @@
     gap: 20px;
 }
 
-.textos-sobre h1{
+.textos-sobre h1 {
     color: var(--preto);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 20px;
 }
 
-.textos-sobre p{
+.textos-sobre p {
     color: var(--preto);
     font-family: "Caladea", serif;
     font-weight: 600;
@@ -356,7 +355,7 @@
 }
 
 /* Problemas */
-.artigo-mangue{
+.artigo-mangue {
     background-color: var(--vermelho);
     padding: 40px 20px;
     display: flex;
@@ -366,7 +365,7 @@
     gap: 40px;
 }
 
-.container-artigo-mangue{
+.container-artigo-mangue {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -374,13 +373,13 @@
     gap: 20px;
 }
 
-.container-artigo-mangue h1{
+.container-artigo-mangue h1 {
     color: var(--branco);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 28px;
 }
 
-.container-artigo-mangue p{
+.container-artigo-mangue p {
     color: var(--branco);
     font-family: "Caladea", serif;
     font-weight: 600;
@@ -394,7 +393,7 @@
     gap: 20px;
 }
 
-.container-textos-mangue{
+.container-textos-mangue {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -404,26 +403,26 @@
     width: 30%;
 }
 
-.container-item-mangue{
+.container-item-mangue {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.container-item-mangue h1{
+.container-item-mangue h1 {
     color: var(--branco);
     font-family: "Chau Philomene One", sans-serif;
     font-size: 20px;
 }
 
-.container-item-mangue p{
+.container-item-mangue p {
     color: var(--branco);
     font-family: "Caladea", serif;
     font-weight: 700;
     font-size: 17px;
 }
 
-.container-item-mangue button{
+.container-item-mangue button {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -433,18 +432,18 @@
     transition: 300ms;
 }
 
-.container-item-mangue button:hover{
+.container-item-mangue button:hover {
     background-color: var(--preto);
 }
 
-.container-imagem-mangue{
+.container-imagem-mangue {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.container-imagem-mangue img{
+.container-imagem-mangue img {
     width: 80%;
     height: 400px;
     border-radius: 10px;
@@ -454,11 +453,11 @@
     transition: 300ms;
 }
 
-.container-imagem-mangue img:hover{
+.container-imagem-mangue img:hover {
     transform: scale(1.01);
 }
 
-.container-imagem-mangue p{
+.container-imagem-mangue p {
     font-family: "Caladea", serif;
     font-size: 10px;
     margin-top: 10px;
@@ -466,27 +465,27 @@
 }
 
 @media (max-width: 750px) {
-    .container-inicio h1{
-        font-family: 'Alta', sans-serif;
+    .container-inicio h1 {
+        font-family: "Alta", sans-serif;
         font-size: 26px;
         color: var(--branco);
     }
-    
-    .container-inicio p{
-        font-family: 'Montserrat',sans-serif;
+
+    .container-inicio p {
+        font-family: "Montserrat", sans-serif;
         font-size: 17px;
         color: var(--branco);
     }
 
-    .perguntas{
+    .perguntas {
         grid-template-columns: auto;
     }
 
-    .container-info-mangue{
+    .container-info-mangue {
         flex-direction: column;
     }
 
-    .container-imagem-mangue img{
+    .container-imagem-mangue img {
         width: 100%;
     }
 }

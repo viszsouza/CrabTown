@@ -33,14 +33,14 @@ require_once 'lib/funcoes_uteis.php';
   <meta property="og:description" content="CrabTown" />
   <meta property="og:site_name" content="CrabTown" />
 
-  <link rel="stylesheet" href="css/artigo.css">
+  <link rel="stylesheet" href="css/artigo.css?v=<?php echo time(); ?>">
   <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
   <!-- Navbar -->
   <nav class="nav">
-    <a href="index.html" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
+    <a href="index.php" class="logo"><img src="images/LogoVertical.png" alt="Logo CrabTown"></a>
 
     <button class="hamburguer"></button>
 

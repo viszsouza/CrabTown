@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,20 @@
     <title>CrabTown | Quiz</title>
 
     <!-- META TAG -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="CrabTown"/>
-    <meta property="og:image" content="image"/>
-    <meta property="og:description" content="CrabTown"/>
-    <meta property="og:site_name" content="CrabTown"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CrabTown" />
+    <meta property="og:image" content="image" />
+    <meta property="og:description" content="CrabTown" />
+    <meta property="og:site_name" content="CrabTown" />
 
     <link rel="stylesheet" href="css/quiz.css">
-    <script src="./js/quiz.js" defer></script>    
+    <script src="./js/quiz.js" defer></script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="nav">
-        <a href="index.html" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
+        <a href="index.php" class="logo"><img src="images/LogoVertical.png" alt="Logo CrabTown"></a>
 
         <button class="hamburguer"></button>
 
@@ -27,44 +29,44 @@
             <li><a href="recicle.html" class="roxo">Recicle</a></li>
             <li><a href="mapa.html" class="roxo">Mapa</a></li>
             <li><a href="classificacao.html" class="roxo">Classificações</a></li>
-            <li><a href="noticias.html" class="roxo">Notícias</a></li>
+            <li><a href="noticias.php" class="roxo">Notícias</a></li>
             <li><a href="dashboard.html" class="roxo">Dashboard</a></li>
             <li><a href="equipe.html" class="roxo">Equipe</a></li>
             <li><a href="quiz.html" class="roxo">Quiz</a></li>
         </ul>
     </nav>
-    
+
     <!-- Quiz Container -->
     <div class="quiz-container">
-    <h1>Quiz CrabTown</h1>
+        <h1>Quiz CrabTown</h1>
 
-    <!-- Barra de progresso -->
-    <div class="progress-container">
-      <div class="progress-bar" id="progress-bar"></div>
-      <span id="question-number">1/10</span>
+        <!-- Barra de progresso -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span id="question-number">1/10</span>
+        </div>
+
+        <!-- Pergunta e Respostas -->
+        <div class="quiz-content">
+            <!-- Pergunta -->
+            <div class="question-container">
+                <p id="question">Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta</p>
+
+                <!-- Botão de confirmar -->
+                <button id="confirm-btn">Confirmar</button>
+            </div>
+
+            <!-- Respostas -->
+            <div class="answers">
+                <button class="answer">Resposta 1</button>
+                <button class="answer">Resposta 2</button>
+                <button class="answer">Resposta 3</button>
+                <button class="answer">Resposta 4</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Pergunta e Respostas -->
-    <div class="quiz-content">
-      <!-- Pergunta -->
-      <div class="question-container">
-        <p id="question">Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta</p>
-
-        <!-- Botão de confirmar -->
-        <button id="confirm-btn">Confirmar</button>
-      </div>
-
-      <!-- Respostas -->
-      <div class="answers">
-        <button class="answer">Resposta 1</button>
-        <button class="answer">Resposta 2</button>
-        <button class="answer">Resposta 3</button>
-        <button class="answer">Resposta 4</button>
-      </div>
-    </div>
-  </div>
-
-        <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <!-- Primeira parte -->
         <section class="footer-sec">
@@ -92,16 +94,19 @@
 
         <!-- Segunda parte -->
         <section class="footer-sec" id="footer-sec2">
-            <a href="https://www.instagram.com/visz.dev/" target="_blank"><p class="footer-copy">&copy; 2024 Visz, Inc.</p></a>
+            <a href="https://www.instagram.com/visz.dev/" target="_blank">
+                <p class="footer-copy">&copy; 2024 Visz, Inc.</p>
+            </a>
 
             <div class="footer-redes-sociais">
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/visz.dev/" target="_blank">
                     <img src="images/FeInstagram.png" class="footer-icon" alt="">
-                </a> 
+                </a>
             </div>
         </section>
     </footer>
     <script src="./js/quiz.js"></script>
 </body>
+
 </html>
