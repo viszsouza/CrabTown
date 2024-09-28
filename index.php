@@ -2,8 +2,8 @@
 require_once 'lib/conexao.php';
 require_once 'lib/index_funcoes_banco.php';
 
-$exec_query_arquivos = selecionaUltimosTresArtigos($pdo);
-if ($exec_query_arquivos->rowCount() === 0) { die('Erro ao selecionar artigos do banco de dados.'); }
+$exec_query_artigos = selecionaUltimosTresArtigos($pdo);
+if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do banco de dados.'); }
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +118,7 @@ if ($exec_query_arquivos->rowCount() === 0) { die('Erro ao selecionar artigos do
     <div class="container-noticias hidden">
 
       <?php $i = 1;
-      foreach($exec_query_arquivos as $artigo) {
+      foreach($exec_query_artigos as $artigo) {
         ?>
       <div class="item-noticia hidden">
         <img src="<?php echo $artigo['caminho_imagem']?>" alt="Imagens da notícia">

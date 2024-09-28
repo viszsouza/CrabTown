@@ -1,9 +1,20 @@
-<?php 
-  require_once 'lib/conexao.php';
-  require_once 'lib/noticias_funcoes_banco.php';
+<?php
+require_once 'lib/conexao.php';
+require_once 'lib/artigo_funcoes_banco.php';
+require_once 'lib/funcoes_uteis.php';
 
-  $exec_query_artigos = selecionaUltimosTresArtigos($pdo);
-  if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do banco de dados.'); }
+    if(isset($_GET['id'])) {
+        $id = intval($_GET['id']);
+
+        $exec_query_artigo = selecionaArtigoPeloId($id, $pdo);
+    } else {
+        die('É preciso passar um parâmetro para o ID.');
+    }
+
+    if ($exec_query_artigo->rowCount() === 0) { die('Erro ao selecionar artigos do banco de dados.'); }
+
+    $artigo = $exec_query_artigo->fetch(PDO::FETCH_ASSOC);
+    $bandas_texto = dividirTextoComUltimaBandaCompleta($artigo['conteudo'], 3)
 ?>
 
 <!DOCTYPE html>
@@ -22,14 +33,14 @@
   <meta property="og:description" content="CrabTown" />
   <meta property="og:site_name" content="CrabTown" />
 
-  <link rel="stylesheet" href="css/noticias.css">
+  <link rel="stylesheet" href="css/artigo.css">
   <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
   <!-- Navbar -->
   <nav class="nav">
-    <a href="index.php" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
+    <a href="index.html" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
 
     <button class="hamburguer"></button>
 
@@ -47,59 +58,42 @@
   <!-- Artigos -->
   <section class="artigo-mangue">
 
+    <div class="migalhas">
+      <p>Notícias >>> <?php echo $artigo['titulo']?></p>
+    </div>
+
     <div class="container-artigo-mangue hidden">
-      <h1>Poluição nos Mangues</h1>
-      <p>Algumas notícias para você entender a gravidade do problema</p>
+      <h1><?php echo $artigo['titulo']?></h1>
+      <p></p>
     </div>
 
     <div class="container-info-mangue hidden">
 
       <div class="container-textos-mangue hidden">
 
-        <?php foreach($exec_query_artigos as $artigo) {?>
         <div class="container-item-mangue hidden">
-          <p><?php echo $artigo['titulo']?></p>
-          <a href="artigo.php?id=<?php echo $artigo['id_artigo']; ?>"><button>Ver notícia</button></a>
+          <p><?php echo $bandas_texto[0] ?></p>
         </div>
-        <?php }?>
 
       </div>
 
       <div class="container-imagem-mangue hidden">
-        <img src="images/imagemMangue.png" alt="Imagens Sobre os Mangues">
+        <img src="<?php echo $artigo['caminho_imagem'] ?>" alt="Imagem Sobre a notícia">
         <p>O Recife cresceu em uma planície costeira na qual o solo predominante era de manguezal. Foto: Peu Ricardo/DP.
         </p>
       </div>
 
     </div>
 
-  </section>
+    <div class="container-textos-artigo hidden">
+      <p> <?php echo $bandas_texto[1] ?></p>
+    </div>
 
-  <!-- Contato -->
-  <section class="contato">
-    <h1 class="hidden">Quer enviar sua nóticia? Entre em contato!</h1>
-
-    <div class="formulario hidden">
-
-      <form action="">
-        <h1>Responda essas perguntas</h1>
-
-        <div class="perguntas hidden">
-          <input type="text" placeholder="Nome da notícia" required class="hidden">
-          <input type="text" placeholder="Assunto da notícia" required class="hidden">
-          <input type="text" placeholder="Editora da notícia" required class="hidden">
-          <input type="text" placeholder="Quando foi a notícia" required class="hidden">
-          <input type="text" placeholder="Local da notícia" required class="hidden">
-          <input type="text" placeholder="Link da notícia" required class="hidden">
-        </div>
-
-
-        <a href="" class="hidden"><button type="submit">Enviar</button></a>
-      </form>
+    <div class="container-textos-artigo hidden">
+      <p><?php echo $bandas_texto[2]  ?></p>
     </div>
 
   </section>
-
 
   <!-- Footer -->
   <footer>
