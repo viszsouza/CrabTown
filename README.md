@@ -7,3 +7,8 @@ HOST=localhost <br>
 USER=root <br>
 PASSWORD=suasenha <br>
 DATABASE=crabtowndb
+
+# Passo a Passo para acessar o sistema:
+Será preciso ter o XAMPP ou WAMP para rodar o arquivo com o PHP.
+
+Solicite o banco de dados ao pessoal do back-end.
