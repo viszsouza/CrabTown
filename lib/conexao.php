@@ -1,6 +1,7 @@
 <?php
 
-require_once '../vendor/autoload.php';
+$caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
+require_once $caminho_vendor;
 
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
