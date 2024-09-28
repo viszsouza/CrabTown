@@ -22,14 +22,14 @@ if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do 
   <meta property="og:description" content="CrabTown" />
   <meta property="og:site_name" content="CrabTown" />
 
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.css?v=<?php echo time(); ?>">
   <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
   <!-- Navbar -->
   <nav class="nav">
-    <a href="index.php" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
+    <a href="index.php" class="logo"><img src="images/LogoVertical.png" alt="Logo CrabTown"></a>
 
     <button class="hamburguer"></button>
 
