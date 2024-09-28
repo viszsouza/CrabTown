@@ -3,6 +3,7 @@
   require_once 'lib/noticias_funcoes_banco.php';
 
   $exec_query_arquivos = selecionaUltimosTresArtigos($pdo);
+  if ($exec_query_arquivos->rowCount() === 0) { die('Erro ao selecionar artigos do banco de dados.'); }
 ?>
 
 <!DOCTYPE html>
@@ -55,14 +56,12 @@
 
       <div class="container-textos-mangue hidden">
 
-        <?php if ($exec_query_arquivos->rowCount() > 0) {?>
         <?php foreach($exec_query_arquivos as $artigo) {?>
         <div class="container-item-mangue hidden">
           <p><?php echo $artigo['titulo']?></p>
           <a href="artigo.html/<?php echo $artigo['id_artigo']; ?>"><button>Ver notícia</button></a>
         </div>
         <?php }?>
-        <?php } else { die('Nenhuma notícia foi selecionada.'); }?>
 
       </div>
 
