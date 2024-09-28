@@ -29,7 +29,7 @@
 <body>
   <!-- Navbar -->
   <nav class="nav">
-    <a href="index.html" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
+    <a href="index.php" class="logo"><img src="/images/LogoVertical.png" alt="Logo CrabTown"></a>
 
     <button class="hamburguer"></button>
 
@@ -59,7 +59,7 @@
         <?php foreach($exec_query_arquivos as $artigo) {?>
         <div class="container-item-mangue hidden">
           <p><?php echo $artigo['titulo']?></p>
-          <a href="artigo.html/<?php echo $artigo['id_artigo']; ?>"><button>Ver notícia</button></a>
+          <a href="artigo.php?id=<?php echo $artigo['id_artigo']; ?>"><button>Ver notícia</button></a>
         </div>
         <?php }?>
 
