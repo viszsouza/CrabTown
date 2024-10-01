@@ -1,3 +1,21 @@
+<?php
+    include_once 'lib/conexao.php';
+    include_once 'lib/recicle_funcoes_banco.php';
+
+    $exec_query_videos_metais = seleciona_informacoes_videos($pdo, 1);
+    if($exec_query_videos_metais->rowCount() === 0) { die('Erro ao selecionar os vídeos com metais.'); }
+
+    $exec_query_videos_plasticos = seleciona_informacoes_videos($pdo, 2);
+    if($exec_query_videos_plasticos->rowCount() === 0) { die('Erro ao selecionar os vídeos com plásticos.'); }
+
+    $exec_query_videos_papeis = seleciona_informacoes_videos($pdo, 3);
+    if($exec_query_videos_papeis->rowCount() === 0) { die('Erro ao selecionar os vídeos com papéis.'); }
+    
+    $exec_query_videos_vidros = seleciona_informacoes_videos($pdo, 4);
+    if($exec_query_videos_vidros->rowCount() === 0) { die('Erro ao selecionar os vídeos com vidros.'); }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,7 +39,7 @@
   <link rel="stylesheet" href="css/recicle.css">
 
   <!-- JavaScript -->
-  <script src="js/recicle.js" defer></script>
+  <script src="js/recicle.js?v=<?php echo time()?>" defer></script>
 </head>
 
 <body>
@@ -60,80 +78,24 @@
 
       <!-- Carrossel - Conteúdo -->
       <div class="contentSlide" id="content">
+        <?php $num = 1; ?>
+        <?php foreach ($exec_query_videos_metais as $video_metal) { ?>
         <div class="block">
-          <img src="images/metaisDeposito.jpeg" alt="" class="block-Img">
+          <img src="<?php echo $video_metal['caminho_imagem']?>" alt="" class="block-Img">
 
-          <h3 class="block-tituloProjeto">Transformando uma lata num objeto para guardar itens</h3>
+          <h3 class="block-tituloProjeto"><?php echo $video_metal['titulo'] ?></h3>
 
           <div class="block-linhaDivisoria"></div>
 
-          <span class="block-span"><strong>AUTO(A):</strong>Ateliê Sagitário</span>
+          <span class="block-span"><strong>AUTOR(A):</strong><?php echo trim($video_metal['nome_criador']) ?></span>
 
           <div class="block-acessarIdentifica">
-            <button class="acessar-amarelo" id="btnMetais1">ACESSAR</button>
+            <button class="acessar-amarelo" id="btnMetais<?php echo $num?>">ACESSAR</button>
             <span class="identificador amarelo"></span>
           </div>
         </div>
-
-        <div class="block">
-          <img src="images/metaisLixeira.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma lata de tinta numa lixeira</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Cristiany Viana</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-amarelo" id="btnMetais2">ACESSAR</button>
-            <span class="identificador amarelo"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/metaisPortaTalheres.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma lata num porta talheres</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Show de Artesanato</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-amarelo" id="btnMetais3">ACESSAR</button>
-            <span class="identificador amarelo"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/metaisPortaTalheres2.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma lata num porta talheres</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Show de Artesanato</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-amarelo" id="btnMetais4">ACESSAR</button>
-            <span class="identificador amarelo"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/metaisVaso.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma lata de tinta num vaso de plantas</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong> Eu Fiz Tu Faz</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-amarelo" id="btnMetais5">ACESSAR</button>
-            <span class="identificador amarelo"></span>
-          </div>
-        </div>
+        <?php $num++;?>
+        <?php }?>
       </div>
 
       <!-- Carrossel - Botão direita -->
@@ -156,111 +118,24 @@
 
       <!-- Carrossel - Conteúdo -->
       <div class="contentSlide" id="carrosselPlastico">
+        <?php $num = 1; ?>
+        <?php foreach ($exec_query_videos_plasticos as $video_plastico) { ?>
         <div class="block">
-          <img src="images/plasticoCarteira.jpeg" alt="" class="block-Img">
+          <img src="<?php echo $video_plastico['caminho_imagem']?>" alt="" class="block-Img">
 
-          <h3 class="block-tituloProjeto">Transformando embalagem de shampoo numa carteira</h3>
+          <h3 class="block-tituloProjeto"><?php echo $video_plastico['titulo'] ?></h3>
 
           <div class="block-linhaDivisoria"></div>
 
-          <span class="block-span"><strong>AUTO(A):</strong>IDEIAS INCRÍVEIS</span>
+          <span class="block-span"><strong>AUTOR(A):</strong><?php echo trim($video_plastico['nome_criador']) ?></span>
 
           <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico1">ACESSAR</button>
+            <button class="acessar-vermelho" id="btnPlastico<?php echo $num; ?>">ACESSAR</button>
             <span class="identificador vermelho"></span>
           </div>
         </div>
-
-        <div class="block">
-          <img src="images/plasticoJarro.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando a embalagem de amaciante num jarro para planta</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion
-          </span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico2">ACESSAR</button>
-            <span class="identificador vermelho"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/plasticoSaboneteira2.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma embalagem de amaciante numa saboneteira</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico3">ACESSAR</button>
-            <span class="identificador vermelho"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/plasticoPortaPapelHigienico.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando um galão num porta papel higiênico</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico4">ACESSAR</button>
-            <span class="identificador vermelho"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/plasticoPortaToalha.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma embalagem de amaciante num porta toalha</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico5">ACESSAR</button>
-            <span class="identificador vermelho"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/plasticoSaboneteira.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma embalagem de amaciante numa saboneteira</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico6">ACESSAR</button>
-            <span class="identificador vermelho"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/plasticoSaboneteira3.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando um galão numa saboneteira</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-vermelho" id="btnPlastico7">ACESSAR</button>
-            <span class="identificador vermelho"></span>
-          </div>
-        </div>
+        <?php $num++;?>
+        <?php }?>
       </div>
 
       <!-- Carrossel - Botão direita -->
@@ -283,96 +158,24 @@
 
       <!-- Carrossel - Conteúdo -->
       <div class="contentSlide" id="carrosselPapeis">
+        <?php $num = 1; ?>
+        <?php foreach ($exec_query_videos_papeis as $video_papel) { ?>
         <div class="block">
-          <img src="images/papeisDecoracao.jpeg" alt="" class="block-Img">
+          <img src="<?php echo $video_papel['caminho_imagem'] ?>" alt="" class="block-Img">
 
-          <h3 class="block-tituloProjeto">Transformando rolo de papel higiênico em objeto decorativo</h3>
+          <h3 class="block-tituloProjeto"><?php echo $video_papel['titulo']?></h3>
 
           <div class="block-linhaDivisoria"></div>
 
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
+          <span class="block-span"><strong>AUTOR(A):</strong><?php echo trim($video_papel['nome_criador'])?></span>
 
           <div class="block-acessarIdentifica">
-            <button class="acessar-azul" id="btnPapeis1">ACESSAR</button>
+            <button class="acessar-azul" id="btnPapeis<?php echo $num; ?>">ACESSAR</button>
             <span class="identificador azul"></span>
           </div>
         </div>
-
-        <div class="block">
-          <img src="images/papeisDecoracaoParede.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando rolo de papel higiênico em decoração de parede</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-azul" id="btnPapeis2">ACESSAR</button>
-            <span class="identificador azul"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/papeisDecoracaoParede2.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando rolo de papel higiênico em decoração de parede</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Mostrando ComoseFaz</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-azul" id="btnPapeis3">ACESSAR</button>
-            <span class="identificador azul"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/papeisGaveta.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando caixa de café em gaveta</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Viviane Magalhães</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-azul" id="btnPapeis4">ACESSAR</button>
-            <span class="identificador azul"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/papeisPortaPulseiras.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando rolo de papel higiênico num porta pulseiras</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-azul" id="btnPapeis5">ACESSAR</button>
-            <span class="identificador azul"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/papeisVasoPlanta.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando rolo de papel higiênico num vaso de planta decorativo
-          </h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Ider Alves - DIY Moda Fashion</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-azul" id="btnPapeis6">ACESSAR</button>
-            <span class="identificador azul"></span>
-          </div>
-        </div>
+        <?php $num++; ?>
+        <?php } ?>
       </div>
 
       <!-- Carrossel - Botão direita -->
@@ -395,81 +198,24 @@
 
       <!-- Carrossel - Conteúdo -->
       <div class="contentSlide" id="carrosselVidro">
+        <?php $num = 1; ?>
+        <?php foreach ($exec_query_videos_vidros as $video_vidro) { ?>
         <div class="block">
-          <img src="images/vidroDecoracao.jpeg" alt="" class="block-Img">
+          <img src="<?php echo $video_vidro['caminho_imagem']?>" alt="" class="block-Img">
 
-          <h3 class="block-tituloProjeto">Transformando uma garrafa grande de vidro num objeto decorativo</h3>
+          <h3 class="block-tituloProjeto"><?php echo $video_vidro['titulo']?></h3>
 
           <div class="block-linhaDivisoria"></div>
 
-          <span class="block-span"><strong>AUTO(A):</strong>Decoranna</span>
+          <span class="block-span"><strong>AUTOR(A):</strong><?php echo trim($video_vidro['nome_criador']) ?></span>
 
           <div class="block-acessarIdentifica">
-            <button class="acessar-verde" id="btnVidro1">ACESSAR</button>
+            <button class="acessar-verde" id="btnVidro<?php echo $num; ?>">ACESSAR</button>
             <span class="identificador verde"></span>
           </div>
         </div>
-
-        <div class="block">
-          <img src="images/vidroEsmalteDecorativo.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando um esmalte num objeto decorativo da casa</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Nay Dias - Artesanatos com Reciclagem</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-verde" id="btnVidro2">ACESSAR</button>
-            <span class="identificador verde"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/vidroGarrafaDecorativa.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando uma garrafa de cerveja num objeto decorativo da casa
-          </h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Artesanato Maria Figueiredo</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-verde" id="btnVidro3">ACESSAR</button>
-            <span class="identificador verde"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/vidroLuminaria.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando um pote grande de vidro numa luminária</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Viviane Magalhães</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-verde" id="btnVidro4">ACESSAR</button>
-            <span class="identificador verde"></span>
-          </div>
-        </div>
-
-        <div class="block">
-          <img src="images/vidroPerfumeDecorativo.jpeg" alt="" class="block-Img">
-
-          <h3 class="block-tituloProjeto">Transformando frascos de perfume em objetos decorativos da casa</h3>
-
-          <div class="block-linhaDivisoria"></div>
-
-          <span class="block-span"><strong>AUTO(A):</strong>Kêu Mercês</span>
-
-          <div class="block-acessarIdentifica">
-            <button class="acessar-verde" id="btnVidro5">ACESSAR</button>
-            <span class="identificador verde"></span>
-          </div>
-        </div>
+        <?php $num++; ?>
+        <?php } ?>
       </div>
 
       <!-- Carrossel - Botão direita -->
