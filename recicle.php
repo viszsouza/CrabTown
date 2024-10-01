@@ -227,23 +227,23 @@
     <!-- Section Contato -->
     <section class="contato">
       <h2>Quer entrar em contato?</h2>
-      <form action="https://formsubmit.co/caiombmonteiro@gmail.com" method="POST">
+      <form action="lib/contato_envio_email.php" method="POST">
         <h3>Nos envie um e-mail</h3>
         <div class="formCampos">
           <!-- nome -->
-          <input type="text" name="Nome" placeholder="Seu nome aqui" required>
+          <input type="text" name="nome" placeholder="Seu nome aqui" required>
 
           <!-- e-mail -->
-          <input type="text" name="E-mail" placeholder="Seu e-mail aqui" required>
+          <input type="text" name="email" placeholder="Seu e-mail aqui" required>
 
           <!-- assunto -->
-          <input type="text" name="Assunto" placeholder="Assunto do e-mail" required>
+          <input type="text" name="assunto" placeholder="Assunto do e-mail" required>
 
           <!-- mensagem -->
-          <textarea rows="7" style="resize: none" maxlength="500" name="Mensagem" placeholder="Digite aqui sua mensagem"
+          <textarea rows="7" style="resize: none" maxlength="500" name="mensagem" placeholder="Digite aqui sua mensagem"
             required></textarea>
         </div>
-        <button type="submit">ENVIAR</button>
+        <button type="submit" name="enviar">ENVIAR</button>
         <input type="hidden" name="_subject" value="Novo Contato!">
         <!-- Isso é para quando enviar a mensagem, aparecer como título da mensagem "Novo Contato!" -->
         <input type="hidden" name="_honey" style="display: none;">
