@@ -33,10 +33,20 @@ if(isset($_POST['enviar'])) {
         $mail->isHTML(true); // E-mail HTML
         $unique_id = uniqid('', true);
         $mail->Subject = "{$_POST['assunto']} - Contato CrabTown ( $unique_id )"; // Assunto
-        $mail->Body = "Nome: " . nomeCompleto($_POST['nome'], ($_POST['sobrenome']) ?? '') . "<br>" .
-        "E-mail: {$_POST['email']} <br>" .
-        "Telefone: {$_POST['telefone']} <br>" . 
-        "Mensagem: <br> {$_POST['mensagem']}"; // Corpo do e-mail
+        
+        // Corpo do Email
+        $mailBody = "";
+        $mailBody .= "Nome: " . nomeCompleto($_POST['nome'], ($_POST['sobrenome']) ?? '') . "<br>" .
+                     "E-mail: {$_POST['email']} <br>";
+        
+
+        if (!empty($_POST['telefone'])) {
+            $mailBody .= "Telefone: {$_POST['telefone']} <br>";
+        }
+        
+        $mailBody .= "Mensagem: <br> " . nl2br(htmlspecialchars($_POST['mensagem'])); 
+        
+        $mail->Body = $mailBody;
 
         // Envio do e-mail
         $mail->send();
