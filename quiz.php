@@ -1,3 +1,22 @@
+<?php
+    require_once "./lib/class_pergunta.php";
+
+    session_start();
+
+    if (!isset($_SESSION["perguntas"])) {
+
+        require_once "./lib/conexao.php";
+        require_once "./lib/quiz_funcoes_banco.php";
+
+        $_SESSION["perguntas"] = serialize(selecionar_perguntas($pdo));
+        $_SESSION["pergunta-atual-index"] = 0;
+
+    }
+
+    $array_de_perguntas = unserialize($_SESSION["perguntas"]);
+    $pergunta_atual = $array_de_perguntas[$_SESSION["pergunta-atual-index"]];
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +34,7 @@
     <meta property="og:site_name" content="CrabTown" />
 
     <link rel="stylesheet" href="css/quiz.css">
-    <script src="./js/quiz.js" defer></script>
+    <!-- <script src="./js/quiz.js" defer></script> -->
 </head>
 
 <body>
@@ -50,27 +69,27 @@
         <div class="quiz-content">
             <!-- Pergunta -->
             <div class="question-container">
-                <p id="question">Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta</p>
+                <p id="question"><?=$pergunta_atual->get_texto()?></p>
 
                 
             </div>
 
             <!-- Respostas -->
-            <form action="" class="answers">
+            <form action="" class="answers" method="POST">
                 <div class="resposta">
-                    <input type="radio" name="answer" id="A"> <label for="A">A</label>
+                    <input type="radio" name="answer" id="A" value="1"> <label for="A"><?=$pergunta_atual->get_alternativa_1()?></label>
                 </div>
 
                 <div class="resposta">
-                    <input type="radio" name="answer" id="B"> <label for="B">B</label>
+                    <input type="radio" name="answer" id="B" value="2"> <label for="B"><?=$pergunta_atual->get_alternativa_2()?></label>
                 </div>
 
                 <div class="resposta">
-                    <input type="radio" name="answer" id="C"> <label for="C">C</label>
+                    <input type="radio" name="answer" id="C" value="3"> <label for="C"><?=$pergunta_atual->get_alternativa_3()?></label>
                 </div>
 
                 <div class="resposta">
-                    <input type="radio" name="answer" id="D"> <label for="D">D</label>
+                    <input type="radio" name="answer" id="D" value="4"> <label for="D"><?=$pergunta_atual->get_alternativa_4()?></label>
                 </div>
 
                 <!-- Botão de confirmar -->
@@ -126,7 +145,6 @@
             </div>
         </section>
     </footer>
-    <script src="./js/quiz.js"></script>
+    <!-- <script src="./js/quiz.js"></script> -->
 </body>
-
 </html>
