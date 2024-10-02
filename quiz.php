@@ -1,6 +1,10 @@
 <?php
     require_once "./lib/class_pergunta.php";
 
+    function checar_formato_da_resposta($resposta): bool {
+        return $resposta === "1" || $resposta === "2" || $resposta === "3" || $resposta === "4";
+    }
+
     session_start();
 
     if (!isset($_SESSION["perguntas"])) {
@@ -11,10 +15,25 @@
         $_SESSION["perguntas"] = serialize(selecionar_perguntas($pdo));
         $_SESSION["pergunta-atual-index"] = 0;
 
+    } else if (isset($_POST["answer"]) && checar_formato_da_resposta($_POST["answer"])) {
+        
+        $_SESSION["alternativas-escolhidas"][] = (int) $_POST["answer"];
+        $pergunta_respondida = unserialize($_SESSION["perguntas"])[$_SESSION["pergunta-atual-index"]];
+        $_SESSION["pergunta-atual-index"]++;
+
     }
 
-    $array_de_perguntas = unserialize($_SESSION["perguntas"]);
-    $pergunta_atual = $array_de_perguntas[$_SESSION["pergunta-atual-index"]];
+    if (isset($_SESSION["pergunta-atual-index"]) && $_SESSION["pergunta-atual-index"] < 10) {
+
+        $array_de_perguntas = unserialize($_SESSION["perguntas"]);
+        $pergunta_atual = $array_de_perguntas[$_SESSION["pergunta-atual-index"]];
+        $numero_da_pergunta = $_SESSION["pergunta-atual-index"] + 1;
+
+    } else {
+
+        echo "Você respondeu a todas as perguntas";
+
+    }
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +81,7 @@
         <!-- Barra de progresso -->
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar"></div>
-            <span id="question-number">1/10</span>
+            <span id="question-number"><?=(string) $numero_da_pergunta?>/10</span>
         </div>
 
         <!-- Pergunta e Respostas -->
