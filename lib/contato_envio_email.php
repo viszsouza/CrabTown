@@ -10,51 +10,66 @@ $dotenv->load();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-if(isset($_POST['enviar'])) {
+if (isset($_POST['enviar'])) {
     $mail = new PHPMailer(true);
+    $pagina_origem = $_SERVER['HTTP_REFERER'] ?? '../index.php';
 
     try {
-        // Configuração do server.
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER; // Retirar posteriormente.
+        // Configuração do servidor
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; 
-        $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['EMAIL']; // E-mail do Gmail
-        $mail->Password = $_ENV['PASSWORD_EMAIL']; // Senha do Gmail 
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Encriptação TLS
-        $mail->Port = 587; // Porta para TLS (Gmail)
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true; 
+        $mail->Username = $_ENV['EMAIL']; 
+        $mail->Password = $_ENV['PASSWORD_EMAIL']; 
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-        // Remetente e destinatário
-        $mail->setFrom($_ENV['EMAIL'], 'Mailer'); // E-mail do remetente
-        $mail->addAddress($_ENV['EMAIL'], 'Crab Town'); // E-mail do destinatário
-        $mail->addReplyTo($_ENV['EMAIL'], 'Information'); // E-mail de resposta
+        // Configurações do E-mail
+        $mail->setFrom($_ENV['EMAIL'], 'Mailer');
+        $mail->addAddress($_ENV['EMAIL'], 'Crab Town');
+        $mail->addReplyTo($_ENV['EMAIL'], 'Information');
         $mail->CharSet = 'UTF-8';
 
-        $mail->isHTML(true); // E-mail HTML
-        $unique_id = uniqid('', true);
-        $mail->Subject = "{$_POST['assunto']} - Contato CrabTown ( $unique_id )"; // Assunto
-        
-        // Corpo do Email
-        $mailBody = "";
-        $mailBody .= "Nome: " . nomeCompleto($_POST['nome'], ($_POST['sobrenome']) ?? '') . "<br>" .
-                     "E-mail: {$_POST['email']} <br>";
-        
+        // Carregando o template HTML
+        $template = file_get_contents(__DIR__ . '/../email_contato_template.html');
 
-        if (!empty($_POST['telefone'])) {
-            $mailBody .= "Telefone: {$_POST['telefone']} <br>";
-        }
-        
-        $mailBody .= "Mensagem: <br> " . nl2br(htmlspecialchars($_POST['mensagem'])); 
-        
+        // Declarando e validando variáveis com os dados do formulário
+        $nome_completo = nomeCompleto(
+            htmlspecialchars($_POST['nome']), 
+            htmlspecialchars($_POST['sobrenome'] ?? '')
+        );
+        $email = htmlspecialchars($_POST['email']);
+        $telefone = !empty($_POST['telefone']) 
+            ? "<p><strong>Telefone:</strong> " . htmlspecialchars($_POST['telefone']) . "</p>" 
+            : '';
+        $mensagem = nl2br(htmlspecialchars($_POST['mensagem']));
+        $assunto = htmlspecialchars($_POST['assunto']);
+
+        // Substituindo os placeholders no template HTML com as variáveis do formulário
+        $mailBody = str_replace(
+            ['{{nome_completo}}', '{{email}}', '{{telefone}}', '{{mensagem}}', '{{assunto}}'],
+            [$nome_completo, $email, $telefone, $mensagem, $assunto],
+            $template
+        );
+
+        // Configuração do e-mail
+        $mail->isHTML(true);
+        $unique_id = uniqid('', true);
+        $mail->Subject = "$assunto - Contato CrabTown ( $unique_id )";
         $mail->Body = $mailBody;
 
-        // Envio do e-mail
         $mail->send();
-        echo 'E-mail enviado com sucesso!';
 
-    } catch(Exception $e) {
-        echo "Não foi possível enviar seu e-mail: {$mail->ErrorInfo}";
+        header("Location: $pagina_origem");
+        exit();
+    } catch (Exception $e) {
+        header("Location: $pagina_origem");
+        exit();
     }
 } else {
     echo "Não foi possível enviar seu e-mail, acesso não foi via formulário";
+    
+    header("Location: $pagina_origem");
+    exit();
 }
+?>
