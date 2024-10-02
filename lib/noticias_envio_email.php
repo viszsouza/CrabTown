@@ -8,48 +8,63 @@ $dotenv->load();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-if(isset($_POST['enviarNoticia'])) {
+if (isset($_POST['enviarNoticia'])) {
     $mail = new PHPMailer(true);
 
-    try {
-        // Configuração do server.
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER; // Retirar posteriormente.
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; 
-        $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['EMAIL']; // E-mail do Gmail
-        $mail->Password = $_ENV['PASSWORD_EMAIL']; // Senha do Gmail 
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Encriptação TLS
-        $mail->Port = 587; // Porta para TLS (Gmail)
+    $pagina_origem = $_SERVER['HTTP_REFERER'] ?? '../index.php';
 
-        // Remetente e destinatário
-        $mail->setFrom($_ENV['EMAIL'], 'Mailer'); // E-mail do remetente
-        $mail->addAddress($_ENV['EMAIL'], 'Crab Town'); // E-mail do destinatário
-        $mail->addReplyTo($_ENV['EMAIL'], 'Information'); // E-mail de resposta
+    try {
+        // Configuração do servidor
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true; 
+        $mail->Username = $_ENV['EMAIL']; 
+        $mail->Password = $_ENV['PASSWORD_EMAIL']; 
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        // Configurações do E-mail
+        $mail->setFrom($_ENV['EMAIL'], 'Mailer');
+        $mail->addAddress($_ENV['EMAIL'], 'Crab Town');
+        $mail->addReplyTo($_ENV['EMAIL'], 'Information');
         $mail->CharSet = 'UTF-8';
 
-        $mail->isHTML(true); // E-mail HTML
+        // Carregando o template HTML
+        $template = file_get_contents(__DIR__ . '/../email_noticia_template.html');
+
+        // Declara as variáveis com os dados do formulário
+        $nomeNoticia = htmlspecialchars($_POST['nomeNoticia']);
+        $assuntoNoticia = htmlspecialchars($_POST['assuntoNoticia']);
+        $editoraNoticia = htmlspecialchars($_POST['editoraNoticia']);
+        $dataNoticia = htmlspecialchars($_POST['dataNoticia']);
+        $localNoticia = htmlspecialchars($_POST['localNoticia']);
+        $linkNoticia = htmlspecialchars($_POST['linkNoticia']);
+
+        // Substituindo os placeholders no template HTML com as variáveis do formulário
+        $mailBody = str_replace(
+            ['{{nomeNoticia}}', '{{assuntoNoticia}}', '{{editoraNoticia}}', '{{dataNoticia}}', '{{localNoticia}}', '{{linkNoticia}}'],
+            [$nomeNoticia, $assuntoNoticia, $editoraNoticia, $dataNoticia, $localNoticia, $linkNoticia],
+            $template
+        );
+
+        // Configuração do email
+        $mail->isHTML(true);
         $unique_id = uniqid('', true);
-        $mail->Subject = "{$_POST['assuntoNoticia']} - Notícia CrabTown ( $unique_id )"; // Assunto
-        
-        // Corpo do Email
-        $mailBody = "";
-        $mailBody .= "Nome: {$_POST['nomeNoticia']} <br>
-                      Assunto: {$_POST['assuntoNoticia']} <br>
-                      Editora: {$_POST['editoraNoticia']} <br>
-                      Data: {$_POST['dataNoticia']} <br>
-                      Local: {$_POST['localNoticia']} <br>
-                      Link: {$_POST['linkNoticia']}";
-        
+        $mail->Subject = "$assuntoNoticia - Notícia CrabTown ( $unique_id )";
         $mail->Body = $mailBody;
 
-        // Envio do e-mail
         $mail->send();
-        echo 'E-mail enviado com sucesso!';
 
-    } catch(Exception $e) {
-        echo "Não foi possível enviar seu e-mail: {$mail->ErrorInfo}";
+        header("Location: $pagina_origem");
+        exit();
+    } catch (Exception $e) {
+        header("Location: $pagina_origem");
+        exit();
     }
 } else {
     echo "Não foi possível enviar seu e-mail, acesso não foi via formulário";
+    
+    header("Location: $pagina_origem");
+    exit();
 }
+?>
