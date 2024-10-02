@@ -11,4 +11,4 @@ DATABASE=crabtowndb
 # Passo a Passo para acessar o sistema:
 Será preciso ter o XAMPP ou WAMP para rodar o arquivo com o PHP.
 
-Solicite o banco de dados ao pessoal do back-end.
+Solicite o banco de dados e o .env ao pessoal do back-end.
