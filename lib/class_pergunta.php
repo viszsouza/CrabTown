@@ -46,4 +46,8 @@ class Pergunta {
     public function get_resposta(): int {
         return $this->resposta;
     }
+
+    public function checar_resposta($resposta): bool {
+        return $resposta === $this->resposta;
+    }
 }
