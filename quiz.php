@@ -13,12 +13,14 @@
         require_once "./lib/quiz_funcoes_banco.php";
 
         $_SESSION["perguntas"] = serialize(selecionar_perguntas($pdo));
+        $_SESSION["pontuacao"] = 0;
         $_SESSION["pergunta-atual-index"] = 0;
 
     } else if (isset($_POST["answer"]) && checar_formato_da_resposta($_POST["answer"])) {
         
         $_SESSION["alternativas-escolhidas"][] = (int) $_POST["answer"];
         $pergunta_respondida = unserialize($_SESSION["perguntas"])[$_SESSION["pergunta-atual-index"]];
+        $_SESSION["pontuacao"] += $pergunta_respondida->checar_resposta((int) $_POST["answer"]) ? 1 : 0;
         $_SESSION["pergunta-atual-index"]++;
 
     }
@@ -31,7 +33,7 @@
 
     } else {
 
-        echo "Você respondeu a todas as perguntas";
+        echo "Você respondeu a todas as perguntas, sua pontuação é {$_SESSION['pontuacao']}";
 
     }
 
