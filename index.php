@@ -149,20 +149,20 @@ if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do 
 
     <div class="formulario hidden">
 
-      <form action="">
+      <form action="lib/contato_envio_email.php" method="post">
         <h1>Preencha o formulário</h1>
 
         <div class="perguntas hidden">
-          <input type="text" placeholder="Nome" required class="hidden">
-          <input type="text" placeholder="Sobrenome" required class="hidden">
-          <input type="text" placeholder="E-mail" required class="hidden">
-          <input type="text" placeholder="Telefone" required class="hidden">
-          <input type="text" placeholder="Assunto" required class="hidden">
-          <input type="text" placeholder="Menssagem" required class="hidden">
+          <input type="text" placeholder="Nome" required class="hidden" name="nome">
+          <input type="text" placeholder="Sobrenome" required class="hidden" name="sobrenome">
+          <input type="text" placeholder="E-mail" required class="hidden" name="email">
+          <input type="text" placeholder="Telefone" required class="hidden" name="telefone">
+          <input type="text" placeholder="Assunto" required class="hidden" name="assunto">
+          <input type="text" placeholder="Menssagem" required class="hidden" name="mensagem">
         </div>
 
 
-        <a href="" class="hidden"><button type="submit">Enviar</button></a>
+        <a class="hidden"><button type="submit" name="enviar">Enviar</button></a>
       </form>
     </div>
 
