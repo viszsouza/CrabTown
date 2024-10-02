@@ -4,36 +4,52 @@
     function checar_formato_da_resposta($resposta): bool {
         return $resposta === "1" || $resposta === "2" || $resposta === "3" || $resposta === "4";
     }
-
+    
     session_start();
+    function get_pergunta($index): Pergunta {
+        $lista_de_perguntas = unserialize($_SESSION["perguntas"]);
+        return $lista_de_perguntas[$index];
+    }
 
-    if (!isset($_SESSION["perguntas"])) {
-
+    function inicializar_quiz(): void {
         require_once "./lib/conexao.php";
         require_once "./lib/quiz_funcoes_banco.php";
 
         $_SESSION["perguntas"] = serialize(selecionar_perguntas($pdo));
         $_SESSION["pontuacao"] = 0;
         $_SESSION["pergunta-atual-index"] = 0;
+        $_SESSION["alternativas-escolhidas"] = [];
+    }
+
+    if (!isset($_SESSION["perguntas"])) {
+
+        inicializar_quiz();
 
     } else if (isset($_POST["answer"]) && checar_formato_da_resposta($_POST["answer"])) {
         
         $_SESSION["alternativas-escolhidas"][] = (int) $_POST["answer"];
-        $pergunta_respondida = unserialize($_SESSION["perguntas"])[$_SESSION["pergunta-atual-index"]];
-        $_SESSION["pontuacao"] += $pergunta_respondida->checar_resposta((int) $_POST["answer"]) ? 1 : 0;
+
+        $pergunta_respondida = get_pergunta($_SESSION["pergunta-atual-index"]);
+        $resultado_da_pergunta = $pergunta_respondida->checar_resposta((int) $_POST["answer"]);
+        $_SESSION["pontuacao"] += $resultado_da_pergunta  ? 1 : 0;
+        
         $_SESSION["pergunta-atual-index"]++;
 
     }
 
     if (isset($_SESSION["pergunta-atual-index"]) && $_SESSION["pergunta-atual-index"] < 10) {
 
-        $array_de_perguntas = unserialize($_SESSION["perguntas"]);
-        $pergunta_atual = $array_de_perguntas[$_SESSION["pergunta-atual-index"]];
+        $pergunta_atual = get_pergunta($_SESSION["pergunta-atual-index"]);
         $numero_da_pergunta = $_SESSION["pergunta-atual-index"] + 1;
 
     } else {
 
         echo "Você respondeu a todas as perguntas, sua pontuação é {$_SESSION['pontuacao']}";
+        // testes V
+        unset($_SESSION["perguntas"]);
+        unset($_SESSION["pontuacao"]);
+        unset($_SESSION["pergunta-atual-index"]);
+        unset($_SESSION["alternativas-escolhidas"]);
 
     }
 

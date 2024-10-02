@@ -37,12 +37,14 @@ function sortear_perguntas($perguntas): array {
     $max = $total_de_perguntas < 10 ? $total_de_perguntas : 10;
 
     do {
+        
         $novo_int = random_int(0, $total_de_perguntas - 1);
         
         if (!in_array($novo_int, $numeros_sorteados)) {
             $numeros_sorteados[] = $novo_int;
             $i++;
         }
+
     } while ($i < $max);
 
     return $numeros_sorteados;
