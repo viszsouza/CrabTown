@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato CrabTown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            color: #aaa;
+            margin-top: 30px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nova Mensagem de Contato</h1>
+        <p><strong>Nome:</strong> {{nome_completo}}</p>
+        <p><strong>E-mail:</strong> {{email}}</p>
+        {{telefone}}
+        <p><strong>Assunto:</strong> {{assunto}}</p>
+        <p><strong>Mensagem:</strong></p>
+        <p>{{mensagem}}</p>
+        <div class="footer">
+            <p>Mensagem de Contato CrabTown.</p>
+        </div>
+    </div>
+</body>
+</html>
