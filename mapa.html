@@ -14,7 +14,7 @@
     <meta property="og:description" content="CrabTown" />
     <meta property="og:site_name" content="CrabTown" />
     <link rel="stylesheet" href="css/mapa.css">
-    <script src="js/scripts.js" defer></script>
+    <script src="js/mapa.js" defer></script>
     <script src="https://kit.fontawesome.com/1ee4abbf49.js" crossorigin="anonymous"></script>
 </head>
 
@@ -25,7 +25,7 @@
 
         <button class="hamburguer"></button>
         <ul class="nav-list">
-            <li><a href="recicle.html" class="roxo">Recicle</a></li>
+            <li><a href="recicle.php" class="roxo">Recicle</a></li>
             <li><a href="mapa.html" class="roxo">Mapa</a></li>
             <li><a href="classificacao.html" class="roxo">Classificações</a></li>
             <li><a href="noticias.php" class="roxo">Notícias</a></li>
@@ -34,31 +34,41 @@
             <li><a href="quiz.html" class="roxo">Quiz</a></li>
         </ul>
     </nav>
-    <div class="sidebar">
-        <h1>Tipos de Mapas</h1>
-        <ul>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-amarelo"></i>Lixo Amarelo</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-azul"></i>Lixo Azul</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-branco"></i>Lixo Branco</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-cinza"></i>Lixo Cinza</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-laranja"></i>Lixo Laranja</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-marrom"></i>Lixo Marrom</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-preto"></i>Lixo Preto</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-roxo"></i>Lixo Roxo</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-verde"></i>Lixo Verde</a></li>
-            <li><a href="#"><i class="fa-solid fa-trash lixo-vermelho"></i>Lixo Vermelho</a></li>
-        </ul>
-    </div>
 
-    <div class="main-container">
-        <h1>Locais para Reciclagem</h1>
-        <div class="main-content">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7899.540235135147!2d-35.03266166261396!3d-8.124872022738987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1726779219985!5m2!1spt-BR!2sbr"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section class="container">
+        <div class="title">
+            <h1>Localizações para Descarte</h1>
         </div>
-    </div>
+
+        <div class="content">
+
+            <p>Está em dúvida sobre onde descartar seus resíduos? Selecione o tipo de lixo abaixo e descubra o local correto para o descarte</p>
+
+            <select name="" id="selectLixo">
+                <option value="" disabled selected>Selecione</option>
+                <option value="lixoAmarelo">Lixo Amarelo</option>
+                <option value="lixoAzul">Lixo Azul</option>
+                <option value="lixoBranco">Lixo Branco</option>
+                <option value="lixoCinza">Lixo Cinza</option>
+                <option value="lixoLaranja">Lixo Laranja</option>
+                <option value="lixoMarrom">Lixo Marrom</option>
+                <option value="lixoPreto">Lixo Preto</option>
+                <option value="lixoRoxo">Lixo Roxo</option>
+                <option value="lixoVerde">Lixo Verde</option>
+                <option value="lixoVermelho">Lixo Vermelho</option>
+            </select>
+        </div>
+
+        <div class="contentMap">
+            <div class="title">
+                <h1>Localização:</h1>
+            </div>
+            <div class="map" id="mapContent">
+                <p><i class="fa-solid fa-location-dot"></i>Selecione um tipo de lixo.</p>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>

@@ -71,7 +71,11 @@
     <meta property="og:site_name" content="CrabTown" />
 
     <link rel="stylesheet" href="css/quiz.css">
+<<<<<<< HEAD:quiz.php
     <!-- <script src="./js/quiz.js" defer></script> -->
+=======
+    <script src="js/scripts.js" defer></script>
+>>>>>>> 57a7c94796b26d9fa265fc15a53635baf7262be7:quiz.html
 </head>
 
 <body>
@@ -82,7 +86,7 @@
         <button class="hamburguer"></button>
 
         <ul class="nav-list">
-            <li><a href="recicle.html" class="roxo">Recicle</a></li>
+            <li><a href="recicle.php" class="roxo">Recicle</a></li>
             <li><a href="mapa.html" class="roxo">Mapa</a></li>
             <li><a href="classificacao.html" class="roxo">Classificações</a></li>
             <li><a href="noticias.php" class="roxo">Notícias</a></li>
@@ -108,7 +112,7 @@
             <div class="question-container">
                 <p id="question"><?=$pergunta_atual->get_texto()?></p>
 
-                
+
             </div>
 
             <!-- Respostas -->

@@ -34,7 +34,7 @@
     <button class="hamburguer"></button>
 
     <ul class="nav-list">
-      <li><a href="recicle.html" class="roxo">Recicle</a></li>
+      <li><a href="recicle.php" class="roxo">Recicle</a></li>
       <li><a href="mapa.html" class="roxo">Mapa</a></li>
       <li><a href="classificacao.html" class="roxo">Classificações</a></li>
       <li><a href="noticias.php" class="roxo">Notícias</a></li>
@@ -81,20 +81,20 @@
 
     <div class="formulario hidden">
 
-      <form action="">
+      <form action="lib/noticias_envio_email.php" method="POST">
         <h1>Responda essas perguntas</h1>
 
         <div class="perguntas hidden">
-          <input type="text" placeholder="Nome da notícia" required class="hidden">
-          <input type="text" placeholder="Assunto da notícia" required class="hidden">
-          <input type="text" placeholder="Editora da notícia" required class="hidden">
-          <input type="text" placeholder="Quando foi a notícia" required class="hidden">
-          <input type="text" placeholder="Local da notícia" required class="hidden">
-          <input type="text" placeholder="Link da notícia" required class="hidden">
+          <input type="text" placeholder="Nome da notícia" required class="hidden" name="nomeNoticia">
+          <input type="text" placeholder="Assunto da notícia" required class="hidden" name="assuntoNoticia">
+          <input type="text" placeholder="Editora da notícia" required class="hidden" name="editoraNoticia">
+          <input type="text" placeholder="Quando foi a notícia" required class="hidden" name="dataNoticia">
+          <input type="text" placeholder="Local da notícia" required class="hidden" name="localNoticia">
+          <input type="text" placeholder="Link da notícia" required class="hidden" name="linkNoticia">
         </div>
 
 
-        <a href="" class="hidden"><button type="submit">Enviar</button></a>
+        <a href="" class="hidden"><button type="submit" name="enviarNoticia">Enviar</button></a>
       </form>
     </div>
 

@@ -45,7 +45,7 @@ require_once 'lib/funcoes_uteis.php';
     <button class="hamburguer"></button>
 
     <ul class="nav-list">
-      <li><a href="recicle.html" class="roxo">Recicle</a></li>
+      <li><a href="recicle.php" class="roxo">Recicle</a></li>
       <li><a href="mapa.html" class="roxo">Mapa</a></li>
       <li><a href="classificacao.html" class="roxo">Classificações</a></li>
       <li><a href="noticias.php" class="roxo">Notícias</a></li>

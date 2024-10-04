@@ -20,3 +20,11 @@ function dividirTextoComUltimaBandaCompleta($texto, $numeroBandas = 3) {
 
   return $bandas;
 }
+
+function nomeCompleto($nome, $sobrenome = '') {
+  if($sobrenome) {
+    return "$nome $sobrenome";
+  } else {
+    return $nome;
+  }
+}
