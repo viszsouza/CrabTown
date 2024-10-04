@@ -28,6 +28,7 @@
         unset($_SESSION["pontuacao"]);
         unset($_SESSION["pergunta-atual-index"]);
         unset($_SESSION["alternativas-escolhidas"]);
+        unset($_SESSION["quiz-concluido"]);
 
     }
 
