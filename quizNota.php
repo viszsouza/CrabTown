@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    if (isset($_SESSION["pontuacao"]) && $_SESSION["pergunta-atual-index"] >= 10) {
+
+        $nota = $_SESSION["pontuacao"];
+
+    } else {
+
+        header("Location: ./quiz.php");
+
+    }
+
+    $classificacao = match (true) {
+        $nota <= 3 => "Bronze",
+        $nota <= 7 => "Prata",
+        $nota > 7 => "Ouro"
+    };
+
+    $imagem = strtolower($classificacao) . ".png";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -44,12 +64,12 @@
         <div class="quiz-content">
             <!-- Pergunta -->
             <div class="question-container">
-                <p id="question">Parabens por ter completado nosso quiz! Sua nota foi de (00) e sua classificação foi (Ouro,Prata,Bronze)!</p>
+                <p id="question">Parabens por ter completado nosso quiz! Sua nota foi de <?=$nota?> e sua classificação foi <?=$classificacao?>!</p>
             </div>
 
             <!-- Respostas -->
             <div>
-                <img src="" alt="">
+                <img src="<?=$imagem?>" alt="A imagem de uma medalha de <?=$classificacao?>">
             </div>
 
             <!-- Botões -->

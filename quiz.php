@@ -44,12 +44,7 @@
 
     } else {
 
-        echo "Você respondeu a todas as perguntas, sua pontuação é {$_SESSION['pontuacao']}";
-        // testes V
-        unset($_SESSION["perguntas"]);
-        unset($_SESSION["pontuacao"]);
-        unset($_SESSION["pergunta-atual-index"]);
-        unset($_SESSION["alternativas-escolhidas"]);
+        header("Location: ./quizNota.php");
 
     }
 
@@ -71,11 +66,8 @@
     <meta property="og:site_name" content="CrabTown" />
 
     <link rel="stylesheet" href="css/quiz.css">
-<<<<<<< HEAD:quiz.php
     <!-- <script src="./js/quiz.js" defer></script> -->
-=======
     <script src="js/scripts.js" defer></script>
->>>>>>> 57a7c94796b26d9fa265fc15a53635baf7262be7:quiz.html
 </head>
 
 <body>
