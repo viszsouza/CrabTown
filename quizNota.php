@@ -3,6 +3,7 @@
     if (isset($_SESSION["pontuacao"]) && $_SESSION["pergunta-atual-index"] >= 10) {
 
         $nota = $_SESSION["pontuacao"];
+        $_SESSION["quiz-concluido"] = true;
 
     } else {
 
@@ -75,7 +76,7 @@
             <!-- Botões -->
             <div class="buttons">
                 <!-- Botão de confirmar -->
-                <a href=""><button id="confirm-btn">Reiniciar Quiz</button></a>
+                <a href="./quiz.php"><button id="confirm-btn">Reiniciar Quiz</button></a>
 
                 <a href=""><button id="confirm-btn">Artigos</button></a>
 

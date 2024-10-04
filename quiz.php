@@ -19,6 +19,22 @@
         $_SESSION["pontuacao"] = 0;
         $_SESSION["pergunta-atual-index"] = 0;
         $_SESSION["alternativas-escolhidas"] = [];
+    
+    }
+
+    function reiniciar_quiz(): void {
+
+        unset($_SESSION["perguntas"]);
+        unset($_SESSION["pontuacao"]);
+        unset($_SESSION["pergunta-atual-index"]);
+        unset($_SESSION["alternativas-escolhidas"]);
+
+    }
+
+    if (isset($_SESSION["quiz-concluido"])) {
+
+        reiniciar_quiz();
+
     }
 
     if (!isset($_SESSION["perguntas"])) {
