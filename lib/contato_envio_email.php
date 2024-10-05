@@ -8,10 +8,8 @@ $caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
 require_once __DIR__ . '/funcoes_uteis.php';
 require_once $caminho_vendor;
 
-// if(!isset($_ENV)) {
-//     $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-//     $dotenv->load();
-// }
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -25,15 +23,15 @@ if (isset($_POST['enviar'])) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true; 
-        $mail->Username = $_ENV['EMAIL']; 
-        $mail->Password = $_ENV['PASSWORD_EMAIL']; 
+        $mail->Username = $_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com'; 
+        $mail->Password = $_ENV['PASSWORD_EMAIL'] ?? 'jiemfpjenlbynwjw'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Configurações do E-mail
-        $mail->setFrom($_ENV['EMAIL'], 'Mailer');
-        $mail->addAddress($_ENV['EMAIL'], 'Crab Town');
-        $mail->addReplyTo($_ENV['EMAIL'], 'Information');
+        $mail->setFrom($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Mailer');
+        $mail->addAddress($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Crab Town');
+        $mail->addReplyTo($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Information');
         $mail->CharSet = 'UTF-8';
 
         // Carregando o template HTML
