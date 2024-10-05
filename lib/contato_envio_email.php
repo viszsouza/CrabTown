@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+
 $caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
 
 require_once __DIR__ . '/funcoes_uteis.php';
