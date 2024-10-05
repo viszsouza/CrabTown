@@ -55,7 +55,7 @@ header('Content-Type: text/html; charset=utf-8');
       <li><a href="noticias.php" class="roxo">Notícias</a></li>
       <li><a href="dashboard.html" class="roxo">Dashboard</a></li>
       <li><a href="equipe.html" class="roxo">Equipe</a></li>
-      <li><a href="quiz.html" class="roxo">Quiz</a></li>
+      <li><a href="quiz.php" class="roxo">Quiz</a></li>
     </ul>
   </nav>
 
