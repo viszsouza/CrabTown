@@ -83,7 +83,7 @@ header('Content-Type: text/html; charset=utf-8');
 
         <a href=""><button id="confirm-btn">Artigos</button></a>
 
-        <a href="quizRespostas.html"><button id="confirm-btn">Ver respostas</button></a>
+        <a href="quizRespostas.php"><button id="confirm-btn">Ver respostas</button></a>
 
       </div>
 
