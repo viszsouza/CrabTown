@@ -17,11 +17,11 @@ if(file_exists(dirname(__DIR__) . "/.env")) {
   $database = $_ENV['DATABASE'];
   $port = $_ENV['DB_PORT'];
 } else {
-  $host = getenv('HOST');
-  $user = getenv('USER');
-  $password = getenv('PASSWORD');
-  $database = getenv('DATABASE');
-  $port = getenv('DB_PORT');
+  $host = 'junction.proxy.rlwy.net';
+  $user = 'root';
+  $password = 'PViSwkfVhNEWxTYnIRClrbYfyRgbEqgt';
+  $database = 'railway';
+  $port = '20642';
 }
 
 $dsn = "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4";
