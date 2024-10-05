@@ -4,13 +4,13 @@ if(!isset($_SESSION)) {
   session_start();
 }
 
-if(!isset($_ENV)) {
-  $caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
-  require_once $caminho_vendor;
+// if(!isset($_ENV)) {
+//   $caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
+//   require_once $caminho_vendor;
   
-  $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-  $dotenv->load();
-}
+//   $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+//   $dotenv->load();
+// }
 
 $host = $_ENV['HOST'];
 $user = $_ENV['USER'];

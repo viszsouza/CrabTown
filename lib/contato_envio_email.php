@@ -8,10 +8,10 @@ $caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
 require_once __DIR__ . '/funcoes_uteis.php';
 require_once $caminho_vendor;
 
-if(!isset($_ENV)) {
-    $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-    $dotenv->load();
-}
+// if(!isset($_ENV)) {
+//     $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+//     $dotenv->load();
+// }
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
