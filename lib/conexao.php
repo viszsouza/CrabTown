@@ -16,7 +16,7 @@ $host = $_ENV['HOST'];
 $user = $_ENV['USER'];
 $password = $_ENV['PASSWORD'];
 $database = $_ENV['DATABASE'];
-$port = $_ENV['PORT'];
+$port = $_ENV['DB_PORT'];
 
 $dsn = "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4";
 $pdo = new PDO($dsn, $user, $password);
