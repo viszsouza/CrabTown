@@ -16,6 +16,8 @@ $host = $_ENV['HOST'];
 $user = $_ENV['USER'];
 $password = $_ENV['PASSWORD'];
 $database = $_ENV['DATABASE'];
+$port = $_ENV['PORT'];
 
-$pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password);
+$dsn = "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4";
+$pdo = new PDO($dsn, $user, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
