@@ -19,9 +19,9 @@ if(file_exists(dirname(__DIR__) . "/.env")) {
 } else {
   $host = 'junction.proxy.rlwy.net';
   $user = 'root';
-  $password = 'PViSwkfVhNEWxTYnIRClrbYfyRgbEqg';
+  $password = 'PViSwkfVhNEWxTYnIRClrbYfyRgbEqgt';
   $database = 'railway';
-  $port = '20642';
+  $port = 20642;
 }
 
 $dsn = "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4";
