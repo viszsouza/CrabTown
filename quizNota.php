@@ -1,3 +1,24 @@
+<?php
+    session_start();
+    if (isset($_SESSION["pontuacao"]) && $_SESSION["pergunta-atual-index"] >= 10) {
+
+        $nota = $_SESSION["pontuacao"];
+        $_SESSION["quiz-concluido"] = true;
+
+    } else {
+
+        header("Location: ./quiz.php");
+
+    }
+
+    $classificacao = match (true) {
+        $nota <= 3 => "Bronze",
+        $nota <= 7 => "Prata",
+        $nota > 7 => "Ouro"
+    };
+
+    $imagem = strtolower($classificacao) . ".png";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +26,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/LogoCarangueijo.png" type="image/x-icon">
-    <title>CrabTown | Quiz Respostas</title>
+    <title>CrabTown | Quiz Nota</title>
 
     <!-- META TAG -->
     <meta property="og:type" content="website" />
@@ -14,7 +35,7 @@
     <meta property="og:description" content="CrabTown" />
     <meta property="og:site_name" content="CrabTown" />
 
-    <link rel="stylesheet" href="css/quizRespostas.css">
+    <link rel="stylesheet" href="css/quizNota.css">
     <script src="js/scripts.js" defer></script>
 </head>
 
@@ -38,48 +59,31 @@
 
     <!-- Quiz Container -->
     <div class="quiz-container">
-        <h1>Quiz CrabTown | Respostas</h1>
+        <h1>Quiz CrabTown | Nota</h1>
 
         <!-- Pergunta e Respostas -->
         <div class="quiz-content">
             <!-- Pergunta -->
             <div class="question-container">
-                <p id="question">Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta</p>
-
-
+                <p id="question">Parabens por ter completado nosso quiz! Sua nota foi de <?=$nota?> e sua classificação foi <?=$classificacao?>!</p>
             </div>
 
             <!-- Respostas -->
-            <form action="" class="answers">
-                <div class="resposta errada">
-                    <input type="radio" name="answer" id="A"> <label for="A">A</label>
-                </div>
-
-                <div class="resposta certa">
-                    <input type="radio" name="answer" id="B"> <label for="B">B</label>
-                </div>
-
-                <div class="resposta errada">
-                    <input type="radio" name="answer" id="C"> <label for="C">C</label>
-                </div>
-
-                <div class="resposta errada">
-                    <input type="radio" name="answer" id="D"> <label for="D">D</label>
-                </div>
-
-            </form>
+            <div>
+                <img src="<?=$imagem?>" alt="A imagem de uma medalha de <?=$classificacao?>">
+            </div>
 
             <!-- Botões -->
             <div class="buttons">
                 <!-- Botão de confirmar -->
-                <a href="quiz.html"><button id="confirm-btn">Reiniciar Quiz</button></a>
+                <a href="./quiz.php"><button id="confirm-btn">Reiniciar Quiz</button></a>
 
-                <a href="noticias.php"><button id="confirm-btn">Artigos</button></a>
+                <a href=""><button id="confirm-btn">Artigos</button></a>
 
-                <a href="index.php"><button id="confirm-btn">Página inicial</button></a>
+                <a href="quizRespostas.html"><button id="confirm-btn">Ver respostas</button></a>
 
             </div>
-
+            
         </div>
     </div>
 

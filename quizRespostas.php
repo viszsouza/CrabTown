@@ -1,3 +1,28 @@
+<?php 
+    require_once "./lib/class_pergunta.php";
+
+    session_start();
+
+    function avaliar_alternativa($alternativa, $alternativa_escolhida, $resposta_certa): string {
+        if ($alternativa === $resposta_certa) {
+            return "certa";
+        } else if ($alternativa === $alternativa_escolhida) {
+            return "errada";
+        } else {
+            return "";
+        }
+    }
+
+    if (!isset($_SESSION["quiz-concluido"])) {
+
+        header("Location: quiz.php");
+
+    }
+
+    $lista_de_perguntas = unserialize($_SESSION["perguntas"]);
+    $lista_de_respostas = $_SESSION["alternativas-escolhidas"];
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/LogoCarangueijo.png" type="image/x-icon">
-    <title>CrabTown | Quiz</title>
+    <title>CrabTown | Quiz Respostas</title>
 
     <!-- META TAG -->
     <meta property="og:type" content="website" />
@@ -14,7 +39,7 @@
     <meta property="og:description" content="CrabTown" />
     <meta property="og:site_name" content="CrabTown" />
 
-    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/quizRespostas.css">
     <script src="js/scripts.js" defer></script>
 </head>
 
@@ -38,51 +63,50 @@
 
     <!-- Quiz Container -->
     <div class="quiz-container">
-        <h1>Quiz CrabTown</h1>
-
-        <!-- Barra de progresso -->
-        <div class="progress-container">
-            <div class="progress-bar" id="progress-bar"></div>
-            <span id="question-number">1/10</span>
-        </div>
+        <h1>Quiz CrabTown | Respostas</h1>
 
         <!-- Pergunta e Respostas -->
         <div class="quiz-content">
-            <!-- Pergunta -->
-            <div class="question-container">
-                <p id="question">Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta Pergunta</p>
+            <?php foreach ($lista_de_perguntas as $indice => $pergunta):?>
+                <!-- Pergunta -->
+                <div class="question-container">
+                    <p id="question"><?=$pergunta->get_texto()?></p>
 
+
+                </div>
+
+                <!-- Respostas -->
+                <form action="" class="answers">
+                    <div class="resposta <?=avaliar_alternativa(1, $lista_de_respostas[$indice], $pergunta->get_resposta())?>">
+                        <input type="radio" name="answer" id="A"> <label for="A"><?=$pergunta->get_alternativa_1()?></label>
+                    </div>
+
+                    <div class="resposta <?=avaliar_alternativa(2, $lista_de_respostas[$indice], $pergunta->get_resposta())?>">
+                        <input type="radio" name="answer" id="B"> <label for="B"><?=$pergunta->get_alternativa_2()?></label>
+                    </div>
+
+                    <div class="resposta <?=avaliar_alternativa(3, $lista_de_respostas[$indice], $pergunta->get_resposta())?>">
+                        <input type="radio" name="answer" id="C"> <label for="C"><?=$pergunta->get_alternativa_3()?></label>
+                    </div>
+
+                    <div class="resposta <?=avaliar_alternativa(4, $lista_de_respostas[$indice], $pergunta->get_resposta())?>">
+                        <input type="radio" name="answer" id="D"> <label for="D"><?=$pergunta->get_alternativa_4()?></label>
+                    </div>
+
+                </form>
+            <?php endforeach; ?>
+
+                <!-- Botões -->
+            <div class="buttons">
+                <!-- Botão de confirmar -->
+                <a href="quiz.php"><button id="confirm-btn">Reiniciar Quiz</button></a>
+
+                <a href="noticias.php"><button id="confirm-btn">Artigos</button></a>
+
+                <a href="index.php"><button id="confirm-btn">Página inicial</button></a>
 
             </div>
 
-            <!-- Respostas -->
-            <form action="" class="answers">
-                <div class="resposta">
-                    <input type="radio" name="answer" id="A"> <label for="A">A</label>
-                </div>
-
-                <div class="resposta">
-                    <input type="radio" name="answer" id="B"> <label for="B">B</label>
-                </div>
-
-                <div class="resposta">
-                    <input type="radio" name="answer" id="C"> <label for="C">C</label>
-                </div>
-
-                <div class="resposta">
-                    <input type="radio" name="answer" id="D"> <label for="D">D</label>
-                </div>
-
-                <!-- Botão de confirmar -->
-                <button id="confirm-btn" type="submit">Confirmar</button>
-            </form>
-            <!--
-            <div class="answers">
-                <button class="answer">Resposta 1</button>
-                <button class="answer">Resposta 2</button>
-                <button class="answer">Resposta 3</button>
-                <button class="answer">Resposta 4</button>
-            </div>  -->
         </div>
     </div>
 
@@ -126,7 +150,6 @@
             </div>
         </section>
     </footer>
-    <script src="./js/quiz.js"></script>
 </body>
 
 </html>
