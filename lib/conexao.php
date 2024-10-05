@@ -26,4 +26,5 @@ if(file_exists(dirname(__DIR__) . "/.env")) {
 
 $dsn = "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4";
 $pdo = new PDO($dsn, $user, $password);
+$pdo->exec("SET NAMES 'utf8mb4'");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

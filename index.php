@@ -1,4 +1,6 @@
-<?php 
+<?php
+header('Content-Type: text/html; charset=utf-8');
+
 require_once 'lib/conexao.php';
 require_once 'lib/index_funcoes_banco.php';
 

@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
+
     include_once 'lib/conexao.php';
     include_once 'lib/recicle_funcoes_banco.php';
 
