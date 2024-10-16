@@ -41,6 +41,7 @@ header('Content-Type: text/html; charset=utf-8');
   <link rel="stylesheet" href="css/recicle.css">
 
   <!-- JavaScript -->
+  <script src="js/scripts.js" defer></script>
   <script src="js/recicle.js?v=<?php echo time()?>" defer></script>
 </head>
 
@@ -289,10 +290,10 @@ header('Content-Type: text/html; charset=utf-8');
       </a>
 
       <div class="footer-redes-sociais">
-        <!-- Instagram -->
+        <!-- Instagram 
         <a href="https://www.instagram.com/visz.dev/" target="_blank">
           <img src="images/FeInstagram.png" class="footer-icon" alt="">
-        </a>
+        </a> -->
       </div>
     </section>
   </footer>

@@ -130,10 +130,10 @@ require_once 'lib/funcoes_uteis.php';
       </a>
 
       <div class="footer-redes-sociais">
-        <!-- Instagram -->
+        <!-- Instagram 
         <a href="https://www.instagram.com/visz.dev/" target="_blank">
           <img src="images/FeInstagram.png" class="footer-icon" alt="">
-        </a>
+        </a> -->
       </div>
     </section>
   </footer>
