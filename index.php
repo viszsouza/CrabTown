@@ -54,8 +54,8 @@ if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do 
       <p>Pequenas Ações, Grandes Impactos: Junte-se ao Movimento que está Transformando o Mundo.</p>
 
       <div class="buttons-inicio">
-        <a href=""><button>Vamos começar</button></a>
-        <a href=""><button>Saiba mais</button></a>
+        <a href="mapa.html"><button>Vamos começar</button></a>
+        <a href="recicle.php"><button>Saiba mais</button></a>
       </div>
     </div>
 
@@ -284,10 +284,10 @@ if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do 
       </a>
 
       <div class="footer-redes-sociais">
-        <!-- Instagram -->
+        <!-- Instagram 
         <a href="https://www.instagram.com/visz.dev/" target="_blank">
           <img src="images/FeInstagram.png" class="footer-icon" alt="">
-        </a>
+        </a> -->
       </div>
     </section>
   </footer>

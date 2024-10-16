@@ -125,6 +125,8 @@ body {
   .quiz-container {
     max-width: 100%;
     padding: 20px;
+
+    flex-direction: column;
   }
   button {
     padding: 10px 20px;
@@ -137,6 +139,8 @@ body {
   .quiz-container {
     max-width: 100%;
     padding: 25px;
+
+    flex-direction: column;
   }
   button {
     padding: 12px 25px;
@@ -149,6 +153,8 @@ body {
   .quiz-container {
     max-width: 100%;
     padding: 30px;
+
+    flex-direction: column;
   }
   button {
     padding: 14px 30px;
@@ -161,6 +167,8 @@ body {
   .quiz-container {
     max-width: 80%;
     padding: 30px;
+
+    flex-direction: column;
   }
   button {
     padding: 15px 30px;
@@ -173,6 +181,8 @@ body {
   .quiz-container {
     max-width: 700px;
     padding: 35px;
+
+    flex-direction: column;
   }
 }
 
