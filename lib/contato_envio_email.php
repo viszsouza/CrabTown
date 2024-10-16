@@ -14,6 +14,9 @@ $dotenv->load();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+const EMAIL = 'contatocrabtown@gmail.com';
+const PASSWORD = 'jiemfpjenlbynwjw';
+
 if (isset($_POST['enviar'])) {
     $mail = new PHPMailer(true);
     $pagina_origem = $_SERVER['HTTP_REFERER'] ?? '../index.php';
@@ -22,16 +25,16 @@ if (isset($_POST['enviar'])) {
         // Configuração do servidor
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true; 
-        $mail->Username = $_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com'; 
-        $mail->Password = $_ENV['PASSWORD_EMAIL'] ?? 'jiemfpjenlbynwjw'; 
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['EMAIL'] ?? EMAIL;
+        $mail->Password = $_ENV['PASSWORD_EMAIL'] ?? PASSWORD;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Configurações do E-mail
-        $mail->setFrom($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Mailer');
-        $mail->addAddress($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Crab Town');
-        $mail->addReplyTo($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Information');
+        $mail->setFrom($_ENV['EMAIL'] ?? EMAIL, 'Mailer');
+        $mail->addAddress($_ENV['EMAIL'] ?? EMAIL, 'Crab Town');
+        $mail->addReplyTo($_ENV['EMAIL'] ?? EMAIL, 'Information');
         $mail->CharSet = 'UTF-8';
 
         // Carregando o template HTML
@@ -39,12 +42,12 @@ if (isset($_POST['enviar'])) {
 
         // Declarando e validando variáveis com os dados do formulário
         $nome_completo = nomeCompleto(
-            htmlspecialchars($_POST['nome']), 
+            htmlspecialchars($_POST['nome']),
             htmlspecialchars($_POST['sobrenome'] ?? '')
         );
         $email = htmlspecialchars($_POST['email']);
-        $telefone = !empty($_POST['telefone']) 
-            ? "<p><strong>Telefone:</strong> " . htmlspecialchars($_POST['telefone']) . "</p>" 
+        $telefone = !empty($_POST['telefone'])
+            ? "<p><strong>Telefone:</strong> " . htmlspecialchars($_POST['telefone']) . "</p>"
             : '';
         $mensagem = nl2br(htmlspecialchars($_POST['mensagem']));
         $assunto = htmlspecialchars($_POST['assunto']);
@@ -76,4 +79,3 @@ if (isset($_POST['enviar'])) {
     header("Location: $pagina_origem");
     exit();
 }
-?>
