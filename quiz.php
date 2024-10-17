@@ -128,25 +128,33 @@ header('Content-Type: text/html; charset=utf-8');
 
       <!-- Respostas -->
       <form action="" class="answers" method="POST">
-        <div class="resposta">
-          <input type="radio" name="answer" id="A" value="1"> <label
-            for="A"><?=$pergunta_atual->get_alternativa_1()?></label>
-        </div>
+        <label for="A">
+          <div class="resposta">
+            <input type="radio" name="answer" id="A" value="1">
+            <?=$pergunta_atual->get_alternativa_1()?>
+          </div>
+        </label>
 
-        <div class="resposta">
-          <input type="radio" name="answer" id="B" value="2"> <label
-            for="B"><?=$pergunta_atual->get_alternativa_2()?></label>
-        </div>
+        <label for="B">
+          <div class="resposta">
+            <input type="radio" name="answer" id="B" value="2">
+            <?=$pergunta_atual->get_alternativa_2()?>
+          </div>
+        </label>
 
-        <div class="resposta">
-          <input type="radio" name="answer" id="C" value="3"> <label
-            for="C"><?=$pergunta_atual->get_alternativa_3()?></label>
-        </div>
+        <label for="C">
+          <div class="resposta">
+            <input type="radio" name="answer" id="C" value="3">
+            <?=$pergunta_atual->get_alternativa_3()?>
+          </div>
+        </label>
 
-        <div class="resposta">
-          <input type="radio" name="answer" id="D" value="4"> <label
-            for="D"><?=$pergunta_atual->get_alternativa_4()?></label>
-        </div>
+        <label for="D">
+          <div class="resposta">
+            <input type="radio" name="answer" id="D" value="4">
+            <?=$pergunta_atual->get_alternativa_4()?>
+          </div>
+        </label>
 
         <!-- Botão de confirmar -->
         <button id="confirm-btn" type="submit">Confirmar</button>
