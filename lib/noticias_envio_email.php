@@ -6,11 +6,16 @@ if(!isset($_SESSION)) {
 $caminho_vendor = dirname(__DIR__) . "/vendor/autoload.php";
 require_once $caminho_vendor;
 
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-$dotenv->load();
+if(file_exists(dirname(__DIR__) . "/.env")) {
+    $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+    $dotenv->load();
+}
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+const EMAIL = 'contatocrabtown@gmail.com';
+const PASSWORD = 'jiemfpjenlbynwjw';
 
 if (isset($_POST['enviarNoticia'])) {
     $mail = new PHPMailer(true);
@@ -22,15 +27,15 @@ if (isset($_POST['enviarNoticia'])) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com';
-        $mail->Password = $_ENV['PASSWORD_EMAIL'] ?? 'jiemfpjenlbynwjw';
+        $mail->Username = $_ENV['EMAIL'] ?? EMAIL;
+        $mail->Password = $_ENV['PASSWORD_EMAIL'] ?? PASSWORD;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Configurações do E-mail
-        $mail->setFrom($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Mailer');
-        $mail->addAddress($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Crab Town');
-        $mail->addReplyTo($_ENV['EMAIL'] ?? 'contatocrabtown@gmail.com', 'Information');
+        $mail->setFrom($_ENV['EMAIL'] ?? EMAIL, 'Mailer');
+        $mail->addAddress($_ENV['EMAIL'] ?? EMAIL, 'Crab Town');
+        $mail->addReplyTo($_ENV['EMAIL'] ?? EMAIL, 'Information');
         $mail->CharSet = 'UTF-8';
 
         // Carregando o template HTML
@@ -71,4 +76,3 @@ if (isset($_POST['enviarNoticia'])) {
     header("Location: $pagina_origem");
     exit();
 }
-?>
