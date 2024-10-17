@@ -99,18 +99,23 @@ body {
   #progress-bar {
     height: 10px;
     width: 90%;
-    background-color: var(--amarelo);
     border-radius: 5px;
     position: relative;
   }
-  
-  #progress-bar::before {
-    content: '';
-    height: 10px;
-    background-color: var(--verde);
-    width: 10%;
+
+  #progress-bar::-webkit-progress-bar {
+    background-color: var(--amarelo);
     border-radius: 5px;
-    display: block;
+  }
+
+  #progress-bar::-webkit-progress-value {
+    background-color: var(--verde);
+    border-radius: 5px;
+  }
+
+  #progress-bar::-moz-progress-bar {
+    background-color: var(--amarelo);
+    border-radius: 5px;
   }
   
   #question-number {
