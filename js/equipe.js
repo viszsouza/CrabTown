@@ -20,9 +20,6 @@ function jainneLinkedin(){
 function mauricioGithub(){
     window.open("https://github.com/MHenrique2004")
 }
-function mauricioLinkedin(){
-    window.open("")
-}
 
 
 // Card 4 - Cristiano
@@ -44,12 +41,6 @@ function joaoLinkedin(){
 
 
 // Card 6 - Lucas
-function lucasGithub(){
-    window.open("")
-}
-function lucasLinkedin(){
-    window.open("")
-}
 
 
 // Card 7 - Paulo
@@ -113,20 +104,11 @@ function isabelaLinkedin(){
 
 
 // Card 14 - Jefferson
-function jeffersonGithub(){
-    window.open("")
-}
-function jeffersonLinkedin(){
-    window.open("")
-}
 
 
 // Card 15 - Guilherme
 function guilhermeGithub(){
     window.open("https://github.com/Dyadss?tab=overview&from=2024-09-01&to=2024-09-19")
-}
-function guilhermeLinkedin(){
-    window.open("")
 }
 
 
