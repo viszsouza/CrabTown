@@ -85,7 +85,7 @@ header('Content-Type: text/html; charset=utf-8');
   <meta property="og:site_name" content="CrabTown" />
 
   <link rel="stylesheet" href="css/quiz.css">
-  <!-- <script src="./js/quiz.js" defer></script> -->
+  <script src="./js/quiz.js" defer></script>
   <script src="js/scripts.js" defer></script>
 </head>
 
@@ -113,7 +113,7 @@ header('Content-Type: text/html; charset=utf-8');
 
     <!-- Barra de progresso -->
     <div class="progress-container">
-      <div class="progress-bar" id="progress-bar"></div>
+      <progress value="<?=(string) $numero_da_pergunta?>" max="10" id="progress-bar"></progress>
       <span id="question-number"><?=(string) $numero_da_pergunta?>/10</span>
     </div>
 
