@@ -8,11 +8,13 @@
 }
 
 .content{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 50px;
+    margin: 50px; */
+    max-width: 40rem;
+    margin: 0 auto;
 }
 
 .itens h2{
@@ -35,26 +37,35 @@
 }
 
 .left .itens{
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 35px;
     margin-bottom: 60px;
 }
 
 .right .itens{
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 35px;
     margin-bottom: 60px;
-}
-.itens button{
-    outline: 0;
-    border-radius: 15px;
-    width: 130px;
-    padding: 20px;
-    margin-bottom: 20px;
 }
 
 .texts{
     max-width: 700px;
     line-clamp: 3;
 
+}
+
+.itens a{
+    padding: 20px;
+    outline: 0;
+    border-radius: 15px;
+    width: 130px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btnAzul{
@@ -121,7 +132,7 @@
     .title{
         font-size: 18px;
     }
-    .itens button{
+    .itens a{
         padding: 15px;
     }
 }
