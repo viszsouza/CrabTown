@@ -19,7 +19,7 @@ header('Content-Type: text/html; charset=utf-8');
         $nota > 7 => "Ouro"
     };
 
-    $imagem = strtolower($classificacao) . ".png";
+    $imagem = $classificacao . ".png";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -73,7 +73,7 @@ header('Content-Type: text/html; charset=utf-8');
 
       <!-- Respostas -->
       <div>
-        <img src="<?=$imagem?>" alt="A imagem de uma medalha de <?=$classificacao?>">
+        <img src="./images/<?=$imagem?>" alt="A imagem de uma medalha de <?=$classificacao?>">
       </div>
 
       <!-- Botões -->
