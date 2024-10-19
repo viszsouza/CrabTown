@@ -48,20 +48,20 @@ header('Content-Type: text/html; charset=utf-8');
 <body>
   <!-- Navbar -->
   <nav class="nav">
-    <a href="index.php" class="logo"><img src="images/LogoVertical.png" alt="Logo CrabTown"></a>
+        <a href="index.php" class="logo"><img src="images/LogoVertical.png" alt="Logo CrabTown"></a>
 
-    <button class="hamburguer"></button>
+        <button class="hamburguer"></button>
 
-    <ul class="nav-list">
-      <li><a href="recicle.php" class="roxo">Recicle</a></li>
-      <li><a href="mapa.html" class="roxo">Mapa</a></li>
-      <li><a href="classificacao.html" class="roxo">Classificações</a></li>
-      <li><a href="noticias.php" class="roxo">Notícias</a></li>
-      <li><a href="dashboard.html" class="roxo">Dashboard</a></li>
-      <li><a href="equipe.html" class="roxo">Equipe</a></li>
-      <li><a href="quiz.php" class="roxo">Quiz</a></li>
-    </ul>
-  </nav>
+        <ul class="nav-list">
+            <li><a href="recicle.php" class="roxo">Recicle</a></li>
+            <li><a href="mapa.html" class="roxo">Mapa</a></li>
+            <li><a href="classificacao.html" class="roxo">Classificações</a></li>
+            <li><a href="noticias.php" class="roxo">Notícias</a></li>
+            <li><a href="https://colab.research.google.com/drive/1LSmD46PSEJAgoQfNN8NhVhmvbYju7xPR#scrollTo=zE6sgclKypoU" class="roxo" target="_blank">Dashboard</a></li>
+            <li><a href="equipe.html" class="roxo">Equipe</a></li>
+            <li><a href="quiz.php" class="roxo">Quiz</a></li>
+        </ul>
+    </nav>
 
   <main>
     <!-- Título da página -->
