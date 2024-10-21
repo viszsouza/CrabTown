@@ -332,6 +332,8 @@
 
 .textos-sobre {
     background-color: var(--branco);
+    max-width: 300px;
+    max-height: 300px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -396,8 +398,6 @@
 .container-textos-mangue {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 40px;
 
     width: 30%;

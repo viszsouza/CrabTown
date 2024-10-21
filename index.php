@@ -182,29 +182,29 @@ if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do 
     <div class="container-sobre hidden">
 
       <div class="item-sobre hidden">
-        <img src="images/imagemMangue.png" alt="">
+        <img src="images/informação.png" alt="">
 
         <div class="textos-sobre">
           <h1>Sobre nós</h1>
-          <p>Resumo notícia</p>
+          <p>Somos uma Startup de desenvolvimento de sites focados na melhora mundial</p>
         </div>
       </div>
 
       <div class="item-sobre hidden">
-        <img src="images/imagemMangue.png" alt="">
+        <img src="images/ambiental.png" alt="">
 
         <div class="textos-sobre">
           <h1>Nosso impacto</h1>
-          <p>Resumo notícia</p>
+          <p>Ajudamos mais de 100 pessoas a entende rcomo reciclar de forma correta</p>
         </div>
       </div>
 
       <div class="item-sobre hidden">
-        <img src="images/imagemMangue.png" alt="">
+        <img src="images/plantar.png" alt="">
 
         <div class="textos-sobre">
           <h1>Como ajudamos</h1>
-          <p>Resumo notícia</p>
+          <p>Enviamos diversas notícias ao nossos usuários com o intuito de informar e ajudar </p>
         </div>
       </div>
 
@@ -225,18 +225,18 @@ if ($exec_query_artigos->rowCount() === 0) { die('Erro ao selecionar artigos do 
       <div class="container-textos-mangue hidden">
 
         <div class="container-item-mangue hidden">
-          <h1>Problema</h1>
-          <p>Problema</p>
+          <h1>Poluição dos oceanos</h1>
+          <p>prejudicando a vida marinha.</p>
         </div>
 
         <div class="container-item-mangue hidden">
-          <h1>Problema</h1>
-          <p>Problema</p>
+          <h1>Desperdício de recursos naturais</h1>
+          <p>como árvores e minérios.</p>
         </div>
 
         <div class="container-item-mangue hidden">
-          <h1>Problema</h1>
-          <p>Problema</p>
+          <h1>Danos à vida selvagem</h1>
+          <p>que pode ingerir ou se enroscar em resíduos.</p>
         </div>
 
       </div>

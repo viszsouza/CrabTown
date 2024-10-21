@@ -61,7 +61,7 @@ header('Content-Type: text/html; charset=utf-8');
             <li><a href="equipe.html" class="roxo">Equipe</a></li>
             <li><a href="quiz.php" class="roxo">Quiz</a></li>
         </ul>
-    </nav>
+    </nav> 
 
   <main>
     <!-- Título da página -->
