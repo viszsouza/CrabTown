@@ -488,4 +488,8 @@
     .container-imagem-mangue img {
         width: 100%;
     }
+
+    .container-mapa-img img {
+        width: 100%;;
+    }
 }
