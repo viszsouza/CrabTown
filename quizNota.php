@@ -14,7 +14,7 @@ header('Content-Type: text/html; charset=utf-8');
     }
 
     $classificacao = match (true) {
-        $nota <= 3 => "Bronze",
+        $nota <= 4 => "Bronze",
         $nota <= 7 => "Prata",
         $nota > 7 => "Ouro"
     };
