@@ -140,6 +140,10 @@ button:hover {
         padding: 10px 20px;
         font-size: 14px;
     }
+
+    #imagem-quiz{
+        width: 100%;
+    }
 }
 
 /* min-width: 390px e max-width: 458px */
@@ -152,6 +156,10 @@ button:hover {
     button {
         padding: 12px 25px;
         font-size: 15px;
+    }
+
+    #imagem-quiz{
+        width: 100%;
     }
 }
 
@@ -166,6 +174,10 @@ button:hover {
         padding: 14px 30px;
         font-size: 16px;
     }
+
+    #imagem-quiz{
+        width: 100%;
+    }
 }
 
 /* min-width: 599px e max-width: 768px */
@@ -179,6 +191,10 @@ button:hover {
         padding: 15px 30px;
         font-size: 16px;
     }
+
+    #imagem-quiz{
+        width: 100%;
+    }
 }
 
 /* min-width: 767px e max-width: 992px */
@@ -186,6 +202,10 @@ button:hover {
     .quiz-container {
         max-width: 700px;
         padding: 35px;
+    }
+
+    #imagem-quiz{
+        width: 100%;
     }
 }
 
@@ -195,6 +215,10 @@ button:hover {
         max-width: 800px;
         padding: 35px;
     }
+
+    #imagem-quiz{
+        width: 100%;
+    }
 }
 
 /* min-width: 1180px e max-width: 1350px */
@@ -202,5 +226,9 @@ button:hover {
     .quiz-container {
         max-width: 900px;
         padding: 40px;
+    }
+
+    #imagem-quiz{
+        width: 100%;
     }
 }

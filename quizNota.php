@@ -73,7 +73,7 @@ header('Content-Type: text/html; charset=utf-8');
 
       <!-- Respostas -->
       <div>
-        <img src="./images/<?=$imagem?>" alt="A imagem de uma medalha de <?=$classificacao?>">
+        <img src="images/<?=$imagem?>" alt="A imagem de uma medalha de <?=$classificacao?>" id="imagem-quiz">
       </div>
 
       <!-- Botões -->
